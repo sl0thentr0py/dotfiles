@@ -40,14 +40,16 @@ myLayout = desktopLayoutModifiers $ smartBorders $ spacingWithEdge space $ layou
      -- Percent of screen to increment by when resizing panes
      delta = 3/100
      -- spacing between windows
-     space = 2
+     space = 1
 
 
 -- manage windows
 myManageHook = composeAll
   [
     className =? "Firefox" --> doShift "2",
-    className =? "Pavucontrol" --> doCenterFloat
+    className =? "Pavucontrol" --> doCenterFloat,
+    className =? "Pinentry" --> doCenterFloat,
+    isDialog --> doCenterFloat
   ]
 
 -- event hook, change for ewmh

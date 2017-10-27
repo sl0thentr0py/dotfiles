@@ -87,7 +87,7 @@ URxvt.transparent: true
 URxvt.shading: 5
 
 URxvt.intensityStyles: false
-!URxvt.scrollBar: false
+URxvt.scrollBar: false
 URxvt.scrollstyle: plain
 URxvt.scrollColor: #222222
 URxvt.troughColor: #000000
@@ -107,7 +107,7 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 ! font
-URxvt*font: xft:DejaVu Sans Mono:size=7:antialias=true:hinting=true
+URxvt*font: xft:Inconsolata:size=7:antialias=true:hinting=true
 URxvt*letterSpace: -1
 ! ,xft:Liberation Mono:size=8:antialias=true:hinting=true
 
@@ -129,7 +129,7 @@ rofi.color-normal: #282828, #ffffff, #282828, #268bd2, #ffffff
 rofi.color-active: #282828, #268bd2, #282828, #268bd2, #205171
 rofi.color-urgent: #282828, #f3843d, #282828, #268bd2, #ffc39c
 
-rofi.font: Source Code Pro Medium 8
+rofi.font: Inconsolata 8
 rofi.modi: window,run,ssh
 rofi.key-run: SuperL+p
 
