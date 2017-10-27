@@ -36,5 +36,6 @@ fi
 xsetroot -cursor_name left_ptr
 rofi &
 udiskie &
+pgrep redshift &> /dev/null || redshift &> /dev/null &
 
 exec xmonad
