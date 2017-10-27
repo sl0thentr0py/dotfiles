@@ -74,7 +74,7 @@ URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
 
 
-Xft.dpi: 96
+Xft.dpi: 113
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintfull
@@ -107,7 +107,7 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 ! font
-URxvt*font: xft:Inconsolata:size=7:antialias=true:hinting=true
+URxvt*font: xft:Inconsolata:size=6:antialias=true:hinting=true
 URxvt*letterSpace: -1
 ! ,xft:Liberation Mono:size=8:antialias=true:hinting=true
 
