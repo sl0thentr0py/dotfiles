@@ -59,17 +59,7 @@ myEventHook = mempty
 myStartupHook = do
   setWMName "LG3D" -- for java applications
   startupHook desktopConfig
-
--- loghook
--- Log Hook Definition: Custom Xmobar Output + Update Pointer Hook
-myLogHook :: Handle -> X ()
-myLogHook xmproc = dynamicLogWithPP xmobarPP
-                     { ppOutput = hPutStrLn xmproc
-                     , ppCurrent = xmobarColor "#83a598" "" . wrap "[" "]"   -- #9BC1B2 #69DFFA
-                     , ppTitle = xmobarColor "#d3869b" "" . shorten 50       -- #9BC1B2 #69DFFA
-                     -- , ppSort = fmap (.namedScratchpadFilterOutWorkspace) getSortByTag
-                     , ppLayout = xmobarColor "#fabd2f" "" . myIcons
-                     } -- >> updatePointer (0.75, 0.75) (0.75, 0.75)
+  spawn "$HOME/.config/polybar/launch.sh"
 
 -- icons
 myIcons layout
@@ -92,7 +82,7 @@ addKeys = [ ("<XF86AudioLowerVolume>"        ,spawn "pulseaudio-ctl down 10")
           ]
 
 
-myConfig xmproc = desktopConfig {
+myConfig = desktopConfig {
     -- general
     terminal           = myTerminal,
     focusFollowsMouse  = myFocusFollowsMouse,
@@ -111,12 +101,11 @@ myConfig xmproc = desktopConfig {
     manageHook         = myManageHook <+> manageHook desktopConfig,
     handleEventHook    = myEventHook <+> handleEventHook desktopConfig,
     startupHook        = myStartupHook,
-    logHook            = (myLogHook xmproc) <+> logHook desktopConfig
+    logHook            = logHook desktopConfig
 } `additionalKeys`
       [ ((mod4Mask, xK_r        ), spawn "rofi -show run")
       , ((mod4Mask, xK_p        ), spawn "passmenu")
       ] `additionalKeysP` addKeys
 
 main = do
-  xmproc <- spawnPipe "/usr/bin/xmobar"
-  xmonad $ myConfig xmproc
+  xmonad $ myConfig
