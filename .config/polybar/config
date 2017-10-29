@@ -1,75 +1,62 @@
-[bar/top]
-;monitor = eDP-1
-width = 100%
-height = 20
+[colors]
+background = #222
+foreground = #eee
+linecolor = #fba922
+bordercolor = #333
+accent = #e60053
 
-background = #00000000
-foreground = #ccffffff
+[global/wm]
+margin-top = 0
+margin-bottom = 0
 
-line-color = ${bar/bottom.background}
-line-size = 2
-
-padding-right = 2
-module-margin = 2
-
-font-0 = NotoSans-Regular:size=8;-1
-font-1 = MaterialIcons:size=8;0
-font-2 = Termsynu:size=8:antialias=false;-2
-font-3 = FontAwesome:size=8;0
-
-modules-right = volume backlight wireless-network wired-network battery date powermenu
+[settings]
+dpi = 113
 
 [bar/bottom]
 ;monitor = eDP-1
-bottom = true
 width = 100%
 height = 20
 
-background = ${bar/top.background}
-foreground = ${bar/top.foreground}
+bottom = true
 
-line-color = ${bar/top.background}
-line-size = 2
+background = ${colors.background}
+foreground = ${colors.foreground}
 
-padding-right = 4
-module-margin = 2
+line-color = ${colors.linecolor}
+underline-size = 1
+overline-size = 2
 
-font-0 = NotoSans-Regular:size=8;0
-font-1 = unifont:size=6;-3
-font-2 = FontAwesome:size=8;-2
-font-3 = NotoSans-Regular:size=8;-1
-font-4 = MaterialIcons:size=8;-1
-font-5 = Termsynu:size=8:antialias=false;0
+border-bottom-size = 2
+border-bottom-color = ${colors.bordercolor}
 
-; modules-left = bspwm
-modules-right = cpu memory
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = NotoSans-Regular:size=6;2
+font-1 = MaterialIcons:size=7;2
+font-2 = Termsynu:size=7:antialias=true;2
+font-3 = FontAwesome:size=7;2
+font-4 = Serif:size=3;1
+
+modules-right = cpu memory volume backlight wireless-network wired-network battery date powermenu
 
 [module/backlight]
 type = internal/xbacklight
-format = <ramp> <bar>
+format = <ramp> <label>
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 
-bar-width = 10
-bar-indicator = |
-bar-indicator-font = 3
-bar-indicator-foreground = #ff
-bar-fill = ─
-bar-fill-font = 3
-bar-fill-foreground = #c9665e
-bar-empty = ─
-bar-empty-font = 3
-bar-empty-foreground = #44
-
 [module/battery]
 type = internal/battery
 full-at = 99
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <ramp-capacity> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
+
+label-charging =  %percentage%%
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #f53c3c
@@ -78,22 +65,6 @@ ramp-capacity-1-foreground = #ffa900
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-
-bar-capacity-width = 10
-bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = #ddffffff
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = #44ffffff
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
 
 ; [module/bspwm]
 ; type = internal/bspwm
@@ -172,53 +143,52 @@ format = <label> <ramp-coreload>
 label = CPU
 
 ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
+ramp-coreload-0-font = 3
 ramp-coreload-0-foreground = #aaff77
 ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
+ramp-coreload-1-font = 3
 ramp-coreload-1-foreground = #aaff77
 ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
+ramp-coreload-2-font = 3
 ramp-coreload-2-foreground = #aaff77
 ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
+ramp-coreload-3-font = 3
 ramp-coreload-3-foreground = #aaff77
 ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
+ramp-coreload-4-font = 3
 ramp-coreload-4-foreground = #fba922
 ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
+ramp-coreload-5-font = 3
 ramp-coreload-5-foreground = #fba922
 ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
+ramp-coreload-6-font = 3
 ramp-coreload-6-foreground = #ff5555
 ramp-coreload-7 = █
-ramp-coreload-7-font = 2
+ramp-coreload-7-font = 3
 ramp-coreload-7-foreground = #ff5555
 
 [module/date]
 type = internal/date
-date =    %%{F#99}%d-%m-%Y%%{F-}  %%{F#fff}%H:%M%%{F-}
-date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}%%{F-}
+date =  %%{F#99}%d-%m-%Y%%{F-}  %%{F#fff}%H:%M%%{F-}
+date-alt =  %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F-}
 
 [module/memory]
 type = internal/memory
+interval = 0.5
 format = <label> <bar-used>
+
 label = RAM
 
 bar-used-width = 10
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
-bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
-bar-used-indicator = |
-bar-used-indicator-font = 6
-bar-used-indicator-foreground = #ff
-bar-used-fill = ─
-bar-used-fill-font = 6
-bar-used-empty = ─
-bar-used-empty-font = 6
-bar-used-empty-foreground = #444444
+bar-used-gradient = true
+bar-used-foreground-0 = #449f3d
+bar-used-foreground-1 = #2f8419
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ed5456
+bar-used-indicator =
+bar-used-fill =  %{T5}▌%{T-}
+bar-used-empty = %{T5}▌%{T-}
+bar-used-empty-foreground = #44
 
 [module/wireless-network]
 type = internal/network
@@ -255,7 +225,7 @@ label-disconnected-foreground = #66
 type = internal/volume
 
 format-volume = <ramp-volume> <label-volume>
-label-muted =   muted
+label-muted = 
 label-muted-foreground = #66
 
 ramp-volume-0 = 
@@ -266,7 +236,7 @@ ramp-volume-3 = 
 [module/powermenu]
 type = custom/menu
 
-format-padding = 5
+format-padding = 2
 
 label-open = 
 label-close = 
