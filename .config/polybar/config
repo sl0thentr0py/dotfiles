@@ -29,6 +29,8 @@ overline-size = 2
 border-bottom-size = 2
 border-bottom-color = ${colors.bordercolor}
 
+padding-right = 5
+
 module-margin-left = 1
 module-margin-right = 1
 
@@ -38,7 +40,8 @@ font-2 = Termsynu:size=7:antialias=true;2
 font-3 = FontAwesome:size=7;2
 font-4 = Serif:size=3;1
 
-modules-right = cpu memory volume backlight wireless-network wired-network battery date powermenu
+modules-left = powermenu
+modules-right = cpu memory volume backlight wireless-network wired-network battery date
 
 [module/backlight]
 type = internal/xbacklight
@@ -236,24 +239,22 @@ ramp-volume-3 = 
 [module/powermenu]
 type = custom/menu
 
-format-padding = 2
+format-padding = 5
 
 label-open = 
 label-close = 
+label-separator = /
 
-menu-0-0 = Terminate WM
+menu-0-0 = Reboot
 menu-0-0-foreground = #fba922
-menu-0-0-exec = bspc quit -1
-menu-0-1 = Reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = Power off
 menu-0-1-foreground = #fba922
-menu-0-1-exec = menu_open-1
-menu-0-2 = Power off
-menu-0-2-foreground = #fba922
-menu-0-2-exec = menu_open-2
+menu-0-1-exec = menu-open-2
 
 menu-1-0 = Cancel
 menu-1-0-foreground = #fba922
-menu-1-0-exec = menu_open-0
+menu-1-0-exec = menu-open-0
 menu-1-1 = Reboot
 menu-1-1-foreground = #fba922
 menu-1-1-exec = sudo reboot
@@ -263,6 +264,6 @@ menu-2-0-foreground = #fba922
 menu-2-0-exec = sudo poweroff
 menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
-menu-2-1-exec = menu_open-0
+menu-2-1-exec = menu-open-0
 
 ; vim:ft=dosini
