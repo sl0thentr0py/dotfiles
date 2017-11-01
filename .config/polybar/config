@@ -29,6 +29,7 @@ overline-size = 2
 border-bottom-size = 2
 border-bottom-color = ${colors.bordercolor}
 
+padding-left = 5
 padding-right = 5
 
 module-margin-left = 1
@@ -40,8 +41,17 @@ font-2 = Termsynu:size=7:antialias=true;2
 font-3 = FontAwesome:size=7;2
 font-4 = Serif:size=3;1
 
-modules-left = powermenu xworkspaces
-modules-right = cpu memory volume backlight wireless-network wired-network battery date
+modules-left = xworkspaces title
+modules-right = cpu memory redshift volume backlight wireless-network wired-network battery date
+
+[module/title]
+type = internal/xwindow
+
+[module/redshift]
+type = custom/script
+interval = 5
+
+exec = ~/.config/polybar/redshift.sh
 
 [module/backlight]
 type = internal/xbacklight
@@ -102,61 +112,6 @@ label-urgent-padding = 2
 label-empty = %index%:%icon%
 label-empty-foreground = #444
 label-empty-padding = 2
-
-; label-dimmed-background = ${xrdb:color14}
-; label-dimmed-overline = ${root.background}
-; label-dimmed-underline = ${root.background}
-; label-dimmed-active-foreground = #f00
-
-; [module/bspwm]
-; format = <label-state> <label-mode>
-
-; label-dimmed-underline = ${BAR.background}
-
-; label-active = %icon%
-; label-active-foreground = #fff
-; label-active-background = #773f3f3f
-; label-active-underline = #c9665e
-; label-active-font = 4
-; label-active-padding = 4
-
-; label-occupied = %icon%
-; label-occupied-foreground = #dd
-; label-occupied-underline = #666
-; label-occupied-font = 4
-; label-occupied-padding = 4
-
-; label-urgent = %icon%
-; label-urgent-foreground = #000000
-; label-urgent-background = #bd2c40
-; label-urgent-underline = #9b0a20
-; label-urgent-font = 4
-; label-urgent-padding = 4
-
-; label-empty = %icon%
-; label-empty-foreground = #55
-; label-empty-font = 4
-; label-empty-padding = 4
-
-; label-monocle = 
-; label-monocle-underline = ${module/bspwm.label-active-underline}
-; label-monocle-background = #33ffffff
-; label-monocle-padding = 2
-
-; label-locked = 
-; label-locked-foreground = #bd2c40
-; label-locked-underline = ${module/bspwm.label-monocle-underline}
-; label-locked-padding = ${module/bspwm.label-monocle-padding}
-
-; label-sticky = 
-; label-sticky-foreground = #fba922
-; label-sticky-underline = ${module/bspwm.label-monocle-underline}
-; label-sticky-padding = ${module/bspwm.label-monocle-padding}
-
-; label-private = 
-; label-private-foreground = #bd2c40
-; label-private-underline = ${module/bspwm.label-monocle-underline}
-; label-private-padding = ${module/bspwm.label-monocle-padding}
 
 [module/cpu]
 type = internal/cpu
@@ -255,34 +210,34 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 
-[module/powermenu]
-type = custom/menu
+; [module/powermenu]
+; type = custom/menu
 
-format-padding = 5
+; format-padding = 5
 
-label-open = 
-label-close = 
-label-separator = /
+; label-open = 
+; label-close = 
+; label-separator = /
 
-menu-0-0 = Reboot
-menu-0-0-foreground = #fba922
-menu-0-0-exec = menu-open-1
-menu-0-1 = Power off
-menu-0-1-foreground = #fba922
-menu-0-1-exec = menu-open-2
+; menu-0-0 = Reboot
+; menu-0-0-foreground = #fba922
+; menu-0-0-exec = menu-open-1
+; menu-0-1 = Power off
+; menu-0-1-foreground = #fba922
+; menu-0-1-exec = menu-open-2
 
-menu-1-0 = Cancel
-menu-1-0-foreground = #fba922
-menu-1-0-exec = menu-open-0
-menu-1-1 = Reboot
-menu-1-1-foreground = #fba922
-menu-1-1-exec = sudo reboot
+; menu-1-0 = Cancel
+; menu-1-0-foreground = #fba922
+; menu-1-0-exec = menu-open-0
+; menu-1-1 = Reboot
+; menu-1-1-foreground = #fba922
+; menu-1-1-exec = sudo reboot
 
-menu-2-0 = Power off
-menu-2-0-foreground = #fba922
-menu-2-0-exec = sudo poweroff
-menu-2-1 = Cancel
-menu-2-1-foreground = #fba922
-menu-2-1-exec = menu-open-0
+; menu-2-0 = Power off
+; menu-2-0-foreground = #fba922
+; menu-2-0-exec = sudo poweroff
+; menu-2-1 = Cancel
+; menu-2-1-foreground = #fba922
+; menu-2-1-exec = menu-open-0
 
 ; vim:ft=dosini
