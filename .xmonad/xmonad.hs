@@ -61,13 +61,6 @@ myStartupHook = do
   startupHook desktopConfig
   spawn "$HOME/.config/polybar/launch.sh"
 
--- icons
-myIcons layout
-    | is "SpacingWithEdge 2 Full"                     = "<icon=/home/neel/.xmonad/icons/layout-full.xbm/>"
-    | is "SpacingWithEdge 2 Tall"                     = "<icon=/home/neel/.xmonad/icons/layout-tall-black.xbm/>"
-    | otherwise = "<icon=/home/neel/.xmonad/icons/layout-gimp.xbm/>"
-    where is = (`L.isInfixOf` layout)
-
 -- Additional keybindings for media keys
 addKeys = [ ("<XF86AudioLowerVolume>"        ,spawn "pulseaudio-ctl down 10")
           , ("<XF86AudioRaiseVolume>"        ,spawn "pulseaudio-ctl up 10"  )
