@@ -192,6 +192,9 @@ else
 
 endif
 
+" hi! Normal ctermbg=NONE guibg=NONE
+" hi! NonText ctermbg=NONE guibg=NONE
+
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0

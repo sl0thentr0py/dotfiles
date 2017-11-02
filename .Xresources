@@ -83,8 +83,13 @@ Xft.antialias: true
 Xft.rgba: rgb
 
 URxvt.loginShell: true
-URxvt.transparent: true
-URxvt.shading: 5
+/* true transparency */
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/e800
+
+/* fake transparency */
+/* URxvt.transparent: true */
+/* URxvt.shading: 5 */
 
 URxvt.intensityStyles: false
 URxvt.scrollBar: false

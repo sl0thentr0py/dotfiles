@@ -59,7 +59,9 @@ myEventHook = mempty
 myStartupHook = do
   setWMName "LG3D" -- for java applications
   startupHook desktopConfig
+  spawn "compton --xrender-sync --xrender-sync-fence "
   spawn "$HOME/.config/polybar/launch.sh"
+  spawn "firefox"
 
 -- Additional keybindings for media keys
 addKeys = [ ("<XF86AudioLowerVolume>"        ,spawn "pulseaudio-ctl down 10")
