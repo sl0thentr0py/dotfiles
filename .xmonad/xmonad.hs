@@ -11,6 +11,7 @@ import XMonad.Layout.Spacing
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.FadeInactive
 
 import XMonad.Util.Run
 import XMonad.Util.EZConfig
@@ -46,7 +47,7 @@ myLayout = desktopLayoutModifiers $ smartBorders $ spacingWithEdge space $ layou
 -- manage windows
 myManageHook = composeAll
   [
-    className =? "Firefox" --> doShift "2",
+    className =? "Firefox Developer Edition" --> doShift "2",
     className =? "Pavucontrol" --> doCenterFloat,
     className =? "Pinentry" --> doCenterFloat,
     isDialog --> doCenterFloat
@@ -59,9 +60,10 @@ myEventHook = mempty
 myStartupHook = do
   setWMName "LG3D" -- for java applications
   startupHook desktopConfig
-  spawn "compton --xrender-sync --xrender-sync-fence "
+  spawn "compton --xrender-sync --xrender-sync-fence"
   spawn "$HOME/.config/polybar/launch.sh"
   spawn "firefox"
+  spawn myTerminal
 
 -- Additional keybindings for media keys
 addKeys = [ ("<XF86AudioLowerVolume>"        ,spawn "pulseaudio-ctl down 10")
@@ -76,6 +78,9 @@ addKeys = [ ("<XF86AudioLowerVolume>"        ,spawn "pulseaudio-ctl down 10")
           -- , ("<XF86PowerOff>"                ,spawn "lock.sh" )
           ]
 
+myLogHook :: X ()
+myLogHook = fadeInactiveLogHook fadeAmount
+    where fadeAmount = 0.9
 
 myConfig = desktopConfig {
     -- general
@@ -96,7 +101,7 @@ myConfig = desktopConfig {
     manageHook         = myManageHook <+> manageHook desktopConfig,
     handleEventHook    = myEventHook <+> handleEventHook desktopConfig,
     startupHook        = myStartupHook,
-    logHook            = logHook desktopConfig
+    logHook            = myLogHook <+> logHook desktopConfig
 } `additionalKeys`
       [ ((mod4Mask, xK_r        ), spawn "rofi -show run")
       , ((mod4Mask, xK_p        ), spawn "passmenu")
