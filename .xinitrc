@@ -37,5 +37,5 @@ xsetroot -cursor_name left_ptr
 rofi &
 udiskie &
 pgrep redshift &> /dev/null || redshift &> /dev/null &
-/usr/local/bin/monitor_hotplug.sh &
+INIT_MODE=1 ~/.config/monitor-hotplug.sh &>> ~/tmp
 exec xmonad
