@@ -57,7 +57,7 @@ Plug 'morhetz/gruvbox'
 
 Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 "Plug 'scrooloose/syntastic'
 
 "" Vim-Session
@@ -252,6 +252,9 @@ let g:NERDTreeWinSize = 30
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
+
+"" tagbar
+nmap <F8> :TagbarToggle<CR>
 
 "" vim-fugitive
 if exists("*fugitive#statusline")
@@ -477,11 +480,27 @@ autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
 " html
 " for html files, 2 spaces
-autocmd Filetype html,javascript,scala,java setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd Filetype html,javascript,scala,java,ruby setlocal tabstop=2 shiftwidth=2 expandtab
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
 
+" ruby
+if executable('ripper-tags')
+  let g:tagbar_type_ruby = {
+      \ 'kinds'      : ['m:modules',
+                      \ 'c:classes',
+                      \ 'C:constants',
+                      \ 'F:singleton methods',
+                      \ 'f:methods',
+                      \ 'a:aliases'],
+      \ 'kind2scope' : { 'c' : 'class',
+                       \ 'm' : 'class' },
+      \ 'scope2kind' : { 'class' : 'c' },
+      \ 'ctagsbin'   : 'ripper-tags',
+      \ 'ctagsargs'  : ['-f', '-']
+      \ }
+endif
 
 "*****************************************************************************
 "*****************************************************************************
