@@ -355,7 +355,7 @@ endif
 "let g:airline#extensions#syntastic#enabled = 1
 "let g:airline#extensions#branch#enabled = 1
 "let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
 "let g:airline_skip_empty_sections = 1
 
 """ensime
@@ -407,6 +407,9 @@ augroup vimrc-make-cmake
     autocmd FileType make setlocal noexpandtab
     autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
+
+"" tagbar
+" autocmd FileType * nested :call tagbar#autoopen(0)
 
 set autoread
 
