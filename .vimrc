@@ -69,6 +69,8 @@ Plug 'ap/vim-css-color'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
+" linting
+" Plug 'w0rp/ale'
 
 " c
 "Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
@@ -90,6 +92,7 @@ Plug 'ap/vim-css-color'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
 
 "scala
 "Plug 'ensime/ensime-vim'
@@ -168,6 +171,7 @@ if !exists('g:not_finish_vimplug')
     colorscheme gruvbox
 endif
 
+set mouse=a
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
@@ -278,8 +282,10 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn))$'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 1
+let g:ctrlp_extensions = ['tag']
 
 noremap <leader>b :CtrlPBuffer<CR>
+noremap <leader>t :CtrlPTag<CR>
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
@@ -290,7 +296,7 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    let g:ctrlp_use_caching = 0
+    " let g:ctrlp_use_caching = 0
 endif
 
 " syntastic
@@ -480,10 +486,8 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " indent
 autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 expandtab
-
-" html
-" for html files, 2 spaces
-autocmd Filetype html,javascript,scala,java,ruby setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd Filetype scala,java,ruby setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd Filetype html,javascript setlocal tabstop=4 shiftwidth=4 expandtab
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
