@@ -121,7 +121,7 @@ URxvt.internalBorder: 5
 
 ! clickable links, clipboard support, and on the fly font resizing
 URxvt.perl-ext-common: default,matcher,clipboard,resize-font,vtwheel
-URxvt.url-launcher: /usr/bin/firefox-developer
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg6
 
