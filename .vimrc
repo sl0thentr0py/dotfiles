@@ -46,7 +46,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-characterize'
 Plug 'vim-scripts/CSApprox'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'bronson/vim-trailing-whitespace'
@@ -63,6 +63,10 @@ Plug 'majutsushi/tagbar'
 "" Vim-Session
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-session'
+
+"" fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 "" Color
 Plug 'ap/vim-css-color'
@@ -276,27 +280,16 @@ noremap <Leader>gr :Gremove<CR>
 nnoremap <Leader>o :.Gbrowse<CR>
 
 
-"" ctrlp.vim
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn))$'
-let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
-let g:ctrlp_use_caching = 1
-let g:ctrlp_extensions = ['tag']
-
-noremap <leader>b :CtrlPBuffer<CR>
-noremap <leader>t :CtrlPTag<CR>
-let g:ctrlp_map = '<leader>f'
-let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+"" fzf
+noremap <leader>b :Buffers<CR>
+noremap <leader>f :GFiles<CR>
+noremap <leader>t :Tags<CR>
 
 
 " The Silver Searcher
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
     set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    " let g:ctrlp_use_caching = 0
 endif
 
 " syntastic
