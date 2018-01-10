@@ -97,6 +97,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-bundler'
+Plug 'danchoi/ri.vim'
 
 "scala
 "Plug 'ensime/ensime-vim'
@@ -486,21 +488,21 @@ autocmd Filetype html,javascript setlocal tabstop=4 shiftwidth=4 expandtab
 let g:javascript_enable_domhtmlcss = 1
 
 " ruby
-if executable('ripper-tags')
-  let g:tagbar_type_ruby = {
-      \ 'kinds'      : ['m:modules',
-                      \ 'c:classes',
-                      \ 'C:constants',
-                      \ 'F:singleton methods',
-                      \ 'f:methods',
-                      \ 'a:aliases'],
-      \ 'kind2scope' : { 'c' : 'class',
-                       \ 'm' : 'class' },
-      \ 'scope2kind' : { 'class' : 'c' },
-      \ 'ctagsbin'   : 'ripper-tags',
-      \ 'ctagsargs'  : ['-f', '-']
-      \ }
-endif
+" if executable('ripper-tags')
+"   let g:tagbar_type_ruby = {
+"       \ 'kinds'      : ['m:modules',
+"                       \ 'c:classes',
+"                       \ 'C:constants',
+"                       \ 'F:singleton methods',
+"                       \ 'f:methods',
+"                       \ 'a:aliases'],
+"       \ 'kind2scope' : { 'c' : 'class',
+"                        \ 'm' : 'class' },
+"       \ 'scope2kind' : { 'class' : 'c' },
+"       \ 'ctagsbin'   : 'ripper-tags',
+"       \ 'ctagsargs'  : ['-f', '-']
+"       \ }
+" endif
 
 "*****************************************************************************
 "*****************************************************************************
