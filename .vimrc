@@ -276,6 +276,7 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "" fzf
 noremap <leader>b :Buffers<CR>
 noremap <leader>f :GFiles<CR>
+noremap <leader><S-f> :Files<CR>
 noremap <leader>t :Tags<CR>
 noremap <leader>a :Ag<CR>
 

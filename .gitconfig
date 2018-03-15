@@ -3,3 +3,7 @@
 	name = Neel Shah
 [core]
 	excludesfile = /home/neel/.gitignore_global
+[icdiff]
+	options = --highlight --line-numbers
+[init]
+	templatedir = ~/.git_template
