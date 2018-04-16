@@ -53,6 +53,12 @@ Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/indentLine'
 Plug 'vimwiki/vimwiki'
 Plug 'morhetz/gruvbox'
+" Plug 'junegunn/limelight.vim'
+" " {{{
+" let g:limelight_default_coefficient = 0.7
+" let g:limelight_conceal_ctermfg = 238
+" nmap <Leader> l :Limelight!!<CR>
+" " }}}
 
 Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
@@ -225,6 +231,13 @@ if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
 endif
 
+" wildmode
+set wildmenu
+set wildmode=longest:full
+set wildignore+=*.a,*.o,*.hi
+set wildignore+=*.pdf,*.gz,*.aux,*.out,*.nav,*.snm,*.vrb
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
@@ -250,7 +263,6 @@ let g:NERDTreeShowBookmarks=1
 let g:NERDTreeNaturalSort=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 30
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
@@ -276,8 +288,10 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "" fzf
 noremap <leader>b :Buffers<CR>
 noremap <leader>f :GFiles<CR>
+noremap <leader>gf :GFiles?<CR>
 noremap <leader><S-f> :Files<CR>
 noremap <leader>t :Tags<CR>
+nnoremap <leader>] :call fzf#vim#tags("'".expand('<cword>'))<cr><space>
 noremap <leader>a :Ag<CR>
 
 
