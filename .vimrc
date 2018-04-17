@@ -104,6 +104,10 @@ Plug 'danchoi/ri.vim'
 "scala
 "Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
+
+"rust
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 ""*****************************************************************************
 "*****************************************************************************
 
@@ -142,7 +146,7 @@ set expandtab
 "let mapleader=','
 
 "" Enable hidden buffers
-"set hidden // not sure if this is good or bad
+" set hidden // not sure if this is good or bad
 
 "" Searching
 set hlsearch
@@ -360,6 +364,9 @@ let g:airline_skip_empty_sections = 1
 "            \ nnoremap <buffer> <silent> <LocalLeader>I :EnSuggestImport<CR> |
 "            \ nnoremap <buffer> <silent> <LocalLeader>r :EnRename<CR>
 
+"" racer
+let g:racer_cmd = "/home/neel/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
 
 "*****************************************************************************
 "" Functions
