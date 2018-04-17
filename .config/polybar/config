@@ -170,7 +170,8 @@ bar-used-empty-foreground = #44
 
 [module/wireless-network]
 type = internal/network
-interface = wlp2s0
+interface = wlan0
+; interface = wlp2s0
 interval = 3.0
 ; ping-interval = 10
 
