@@ -292,7 +292,7 @@ noremap <leader>gf :GFiles?<CR>
 noremap <leader><S-f> :Files<CR>
 noremap <leader>t :Tags<CR>
 nnoremap <leader>] :call fzf#vim#tags("'".expand('<cword>'))<cr><space>
-noremap <leader>a :Ag<CR>
+noremap <leader>a :Ag <C-R><C-W><CR>
 
 
 " The Silver Searcher

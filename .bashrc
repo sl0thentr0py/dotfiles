@@ -12,6 +12,7 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 source /usr/share/nvm/init-nvm.sh
 source /etc/profile.d/autojump.bash
 alias vim=nvim
+alias v=nvim
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
