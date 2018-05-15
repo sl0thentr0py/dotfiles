@@ -59,6 +59,7 @@ Plug 'morhetz/gruvbox'
 " let g:limelight_conceal_ctermfg = 238
 " nmap <Leader> l :Limelight!!<CR>
 " " }}}
+Plug 'junegunn/goyo.vim'
 
 Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
@@ -295,6 +296,7 @@ noremap <leader>f :GFiles<CR>
 noremap <leader>gf :GFiles?<CR>
 noremap <leader><S-f> :Files<CR>
 noremap <leader>t :Tags<CR>
+noremap <leader>' :Marks<CR>
 nnoremap <leader>] :call fzf#vim#tags("'".expand('<cword>'))<cr><space>
 noremap <leader>a :Ag <C-R><C-W><CR>
 
