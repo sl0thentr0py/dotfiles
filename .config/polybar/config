@@ -40,7 +40,7 @@ font-0 = NotoSans-Regular:size=6;2
 font-1 = MaterialIcons:size=7;2
 font-2 = Termsynu:size=7:antialias=true;2
 font-3 = FontAwesome:size=7;2
-font-4 = Serif:size=3;1
+font-4 = Termsynu:size=3;1
 
 modules-left = xworkspaces title
 modules-right = cpu memory redshift volume backlight wireless-network wired-network battery date

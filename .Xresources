@@ -77,9 +77,9 @@ URxvt.color250: #d5c4a1
 Xft.dpi: 113
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintfull
-Xft.hinting: true
-Xft.antialias: true
+Xft.hintstyle: hinstslight
+Xft.hinting: 1
+Xft.antialias: 1
 Xft.rgba: rgb
 
 URxvt.loginShell: true

@@ -155,6 +155,10 @@ set incsearch
 set ignorecase
 set smartcase
 
+if has('nvim')
+  set inccommand=nosplit
+endif
+
 set showmatch
 
 "" Directories for swp files

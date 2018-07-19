@@ -16,6 +16,7 @@ alias v=nvim
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export EDITOR=vim
 
 export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
