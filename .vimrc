@@ -300,6 +300,7 @@ noremap <leader>f :GFiles<CR>
 noremap <leader>gf :GFiles?<CR>
 noremap <leader><S-f> :Files<CR>
 noremap <leader>t :Tags<CR>
+noremap <leader>bt :BTags<CR>
 noremap <leader>' :Marks<CR>
 nnoremap <leader>] :call fzf#vim#tags("'".expand('<cword>'))<cr><space>
 noremap <leader>a :Ag <C-R><C-W><CR>
