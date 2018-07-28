@@ -300,7 +300,7 @@ noremap <leader>f :GFiles<CR>
 noremap <leader>gf :GFiles?<CR>
 noremap <leader><S-f> :Files<CR>
 noremap <leader>t :Tags<CR>
-noremap <leader>bt :BTags<CR>
+" noremap <leader>bt :BTags<CR>
 noremap <leader>' :Marks<CR>
 nnoremap <leader>] :call fzf#vim#tags("'".expand('<cword>'))<cr><space>
 noremap <leader>a :Ag <C-R><C-W><CR>
@@ -479,7 +479,8 @@ vnoremap K :m '<-2<CR>gv=gv
 "*****************************************************************************
 
 " indent
-autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd Filetype scala,java,ruby setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd Filetype html,javascript setlocal tabstop=4 shiftwidth=4 expandtab
 
