@@ -92,7 +92,7 @@ Plug 'ap/vim-css-color'
 "" Javascript Bundle
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'moll/vim-node'
+" Plug 'moll/vim-node'
 
 "ruby
 Plug 'vim-ruby/vim-ruby'
@@ -482,10 +482,27 @@ vnoremap K :m '<-2<CR>gv=gv
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd Filetype scala,java,ruby setlocal tabstop=2 shiftwidth=2 expandtab
-autocmd Filetype html,javascript setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd Filetype html,javascript,javascript.jsx setlocal tabstop=4 shiftwidth=4 expandtab
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
+
+function! LoadMainNodeModule(fname)
+    let nodeModules = "./node_modules/"
+    let packageJsonPath = nodeModules . a:fname . "/package.json"
+
+    if filereadable(packageJsonPath)
+        return nodeModules . a:fname . "/" . json_decode(join(readfile(packageJsonPath))).main
+    else
+        return nodeModules . a:fname
+    endif
+endfunction
+
+autocmd Filetype javascript,javascript.jsx
+      \ setlocal path=.,src |
+      \ setlocal suffixesadd=.js,.jsx |
+      \ setlocal isfname+=@-@ |
+      \ setlocal includeexpr=LoadMainNodeModule(v:fname)
 
 " ruby
 " if executable('ripper-tags')
