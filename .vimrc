@@ -90,9 +90,9 @@ Plug 'ap/vim-css-color'
 
 " javascript
 "" Javascript Bundle
-"Plug 'jelera/vim-javascript-syntax'
-"Plug 'pangloss/vim-javascript'
-"Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'moll/vim-node'
 
 "ruby
 Plug 'vim-ruby/vim-ruby'
