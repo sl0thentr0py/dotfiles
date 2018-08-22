@@ -492,7 +492,8 @@ function! LoadMainNodeModule(fname)
     let packageJsonPath = nodeModules . a:fname . "/package.json"
 
     if filereadable(packageJsonPath)
-        return nodeModules . a:fname . "/" . json_decode(join(readfile(packageJsonPath))).main
+        let json = json_decode(join(readfile(packageJsonPath)))
+        return nodeModules . a:fname . "/" . get(json, 'main', 'index.js')
     else
         return nodeModules . a:fname
     endif
