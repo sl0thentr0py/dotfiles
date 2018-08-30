@@ -11,4 +11,5 @@ fi
 # Key bindings
 # ------------
 source "/home/neel/.fzf/shell/key-bindings.bash"
+source "/home/neel/.config/fzf-git-functions.bash"
 
