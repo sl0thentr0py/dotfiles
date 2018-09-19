@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+alias ls='exa -l --git'
 PS1='[\u@\h \W]\$ '
 
 source /usr/share/doc/pkgfile/command-not-found.bash
@@ -23,6 +23,6 @@ export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
 
 eval "$(fasd --init auto)"
-alias j='fasd_cd -d'
+alias j='fasd_cd -d -1'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
