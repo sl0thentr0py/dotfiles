@@ -64,6 +64,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
+Plug 'chrisbra/csv.vim'
 "Plug 'scrooloose/syntastic'
 
 "" fzf

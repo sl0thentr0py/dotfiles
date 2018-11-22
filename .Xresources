@@ -101,7 +101,9 @@ URxvt.saveLines: 10000
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 URxvt.secondaryWheel: 1
-
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
 
 ! copy paste
 URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
