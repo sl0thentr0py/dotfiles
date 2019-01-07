@@ -40,11 +40,10 @@ endif
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/CSApprox'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
@@ -110,6 +109,9 @@ Plug 'derekwyatt/vim-scala'
 "rust
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
+
+"swift
+Plug 'keith/swift.vim'
 ""*****************************************************************************
 "*****************************************************************************
 
@@ -267,15 +269,6 @@ cnoreabbrev Qall qall
 "*****************************************************************************
 "" Plugins
 "*****************************************************************************
-"" NERDTree configuration
-let g:NERDTreeChDirMode=1
-let g:NERDTreeShowBookmarks=1
-let g:NERDTreeNaturalSort=1
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 30
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
-
 "" tagbar
 nmap <F8> :TagbarToggle<CR>
 
