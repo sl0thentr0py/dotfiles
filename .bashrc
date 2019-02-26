@@ -12,6 +12,7 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 source /usr/share/nvm/init-nvm.sh
 alias vim=nvim
 alias v=nvim
+alias git=hub
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.cargo/bin"

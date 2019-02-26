@@ -172,6 +172,7 @@ set noswapfile
 set fileformats=unix,dos,mac
 set showcmd
 set shell=/bin/bash
+set omnifunc=syntaxcomplete#Complete
 
 "*****************************************************************************
 "" Visual Settings
