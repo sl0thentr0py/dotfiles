@@ -42,6 +42,7 @@ endif
 "*****************************************************************************
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/CSApprox'
@@ -299,6 +300,8 @@ noremap <leader>' :Marks<CR>
 nnoremap <leader>] :call fzf#vim#tags("'".expand('<cword>'))<cr><space>
 noremap <leader>a :Ag <C-R><C-W><CR>
 
+autocmd VimEnter * command! -nargs=* -bang Agr call fzf#vim#ag_raw(<q-args>, <bang>0)
+
 
 " The Silver Searcher
 if executable('ag')
@@ -516,5 +519,9 @@ autocmd Filetype javascript,javascript.jsx
 "       \ }
 " endif
 
+" rvm_ctags ruby
+autocmd FileType ruby
+			\ let &tags .= "," . $MY_RUBY_HOME . "/lib/tags" |
+			\ let &path .= "," . $MY_RUBY_HOME . "/lib"
 "*****************************************************************************
 "*****************************************************************************
