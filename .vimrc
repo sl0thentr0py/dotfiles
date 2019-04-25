@@ -113,6 +113,12 @@ Plug 'racer-rust/vim-racer'
 
 "swift
 Plug 'keith/swift.vim'
+
+"elixir
+Plug 'elixir-editors/vim-elixir'
+
+"ansible
+Plug 'pearofducks/ansible-vim'
 ""*****************************************************************************
 "*****************************************************************************
 
@@ -173,6 +179,8 @@ set fileformats=unix,dos,mac
 set showcmd
 set shell=/bin/bash
 set omnifunc=syntaxcomplete#Complete
+
+let g:ruby_host_prog = 'rvm default do neovim-ruby-host'
 
 "*****************************************************************************
 "" Visual Settings

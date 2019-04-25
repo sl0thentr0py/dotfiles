@@ -18,6 +18,7 @@ alias git=hub
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 export EDITOR=vim
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
