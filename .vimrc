@@ -93,6 +93,7 @@ Plug 'ap/vim-css-color'
 "" Javascript Bundle
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
 " Plug 'moll/vim-node'
 
 "ruby
