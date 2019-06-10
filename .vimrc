@@ -533,5 +533,10 @@ autocmd Filetype javascript,javascript.jsx
 autocmd FileType ruby
 			\ let &tags .= "," . $MY_RUBY_HOME . "/lib/tags" |
 			\ let &path .= "," . $MY_RUBY_HOME . "/lib"
+
+" elixir deps tags
+autocmd FileType elixir
+			\ let &tags .= ",deps/tags"
+
 "*****************************************************************************
 "*****************************************************************************
