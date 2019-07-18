@@ -512,6 +512,8 @@ autocmd Filetype javascript,javascript.jsx
       \ setlocal isfname+=@-@ |
       \ setlocal includeexpr=LoadMainNodeModule(v:fname)
 
+autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
+
 " ruby
 " if executable('ripper-tags')
 "   let g:tagbar_type_ruby = {
