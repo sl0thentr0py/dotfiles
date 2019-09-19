@@ -47,6 +47,7 @@ modules-right = cpu memory redshift volume backlight wireless-network wired-netw
 
 [module/title]
 type = internal/xwindow
+label-maxlen = 50
 
 [module/redshift]
 type = custom/script
@@ -170,7 +171,7 @@ bar-used-empty-foreground = #44
 
 [module/wireless-network]
 type = internal/network
-interface = wlan0
+interface = wlan1
 ; interface = wlp2s0
 interval = 3.0
 ; ping-interval = 10

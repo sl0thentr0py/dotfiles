@@ -60,6 +60,7 @@ myEventHook = mempty
 myStartupHook = do
   setWMName "LG3D" -- for java applications
   startupHook desktopConfig
+  -- setSupported
   spawn "compton --xrender-sync --xrender-sync-fence"
   spawn "$HOME/.config/polybar/launch.sh"
   spawn "firefox"
@@ -81,6 +82,34 @@ addKeys = [ ("<XF86AudioLowerVolume>"        ,spawn "pulseaudio-ctl down 10")
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
     where fadeAmount = 0.9
+
+setSupported :: X ()
+setSupported = withDisplay $ \dpy -> do
+    r <- asks theRoot
+    a <- getAtom "_NET_SUPPORTED"
+    c <- getAtom "ATOM"
+    supp <- mapM getAtom ["_NET_WM_STATE_HIDDEN"
+                         ,"_NET_NUMBER_OF_DESKTOPS"
+                         ,"_NET_CLIENT_LIST"
+                         ,"_NET_CLIENT_LIST_STACKING"
+                         ,"_NET_CURRENT_DESKTOP"
+                         ,"_NET_DESKTOP_NAMES"
+                         ,"_NET_ACTIVE_WINDOW"
+                         ,"_NET_WM_DESKTOP"
+                         ,"_NET_WM_STRUT"
+                         ,"_NET_DESKTOP_VIEWPORT"
+                         ]
+    io $ changeProperty32 dpy r a c propModeReplace (fmap fromIntegral supp)
+
+-- setDesktopViewports :: [String] -> X ()
+-- setDesktopViewports names = withDisplay $ \dpy -> do
+--     -- Names thereof
+--     r <- asks theRoot
+--     a <- getAtom "_NET_DESKTOP_NAMES"
+--     c <- getAtom "UTF8_STRING"
+--     let names' = map fromIntegral $ concatMap ((++[0]) . encode) names
+--     io $ changeProperty8 dpy r a c propModeReplace names'
+
 
 myConfig = desktopConfig {
     -- general

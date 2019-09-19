@@ -120,6 +120,9 @@ Plug 'elixir-editors/vim-elixir'
 
 "ansible
 Plug 'pearofducks/ansible-vim'
+
+"nginx
+Plug 'chr4/nginx.vim'
 ""*****************************************************************************
 "*****************************************************************************
 
@@ -227,7 +230,6 @@ endif
 
 
 "" Disable the blinking cursor.
-set gcr=a:blinkon0
 set scrolloff=10
 
 "" Status bar
@@ -530,6 +532,8 @@ autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
 "       \ 'ctagsargs'  : ['-f', '-']
 "       \ }
 " endif
+
+set tags^=./.git/tags;
 
 " rvm_ctags ruby
 autocmd FileType ruby
