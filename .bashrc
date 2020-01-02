@@ -25,6 +25,8 @@ shopt -s histappend
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
 
+export MM_DEBUG=1
+
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d -1'
 
