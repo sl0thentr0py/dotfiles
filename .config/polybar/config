@@ -14,9 +14,8 @@ dpi = 113
 ; screenchange-reload = true
 
 [bar/bottom]
-monitor = ${env:MONITOR:LVDS1}
 width = 100%
-height = 20
+height = 30
 
 bottom = true
 
@@ -24,26 +23,26 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-color = ${colors.linecolor}
-underline-size = 1
-overline-size = 2
+underline-size = 3
+overline-size = 3
 
-border-bottom-size = 2
+border-bottom-size = 5
 border-bottom-color = ${colors.bordercolor}
 
 padding-left = 5
 padding-right = 5
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 2
+module-margin-right = 2
 
-font-0 = NotoSans-Regular:size=6;2
-font-1 = MaterialIcons:size=7;2
-font-2 = Termsynu:size=7:antialias=true;2
-font-3 = FontAwesome:size=7;2
-font-4 = Termsynu:size=3;1
+font-0 = NotoSans-Regular:size=10;2
+font-1 = MaterialIcons:size=12;2
+font-2 = Termsynu:size=10:antialias=true;2
+font-3 = FontAwesome:size=10;2
+font-4 = Termsynu:size=4;2
 
 modules-left = xworkspaces title
-modules-right = cpu memory redshift volume backlight wireless-network wired-network battery date
+modules-right = cpu memory redshift volume backlight wired-network date
 
 [module/title]
 type = internal/xwindow
@@ -98,20 +97,20 @@ icon-default = 
 
 label-monitor = %name%
 
-label-active = %icon%:%name%
+label-active = %icon%: %name%
 label-active-background = #3f3f3f
 label-active-padding = 2
 label-active-underline = #f66
 
-label-occupied = %index%:%icon%
+label-occupied = %index%: %icon%
 label-occupied-padding = 2
-label-occupied-background = ${xrdb:color14}
+label-occupied-underline = #aaff77
 
-label-urgent = %index%:%icon%
-label-urgent-background = #bd2c40
+label-urgent = %index%: %icon%
+label-urgent-underline = #bd2c40
 label-urgent-padding = 2
 
-label-empty = %index%:%icon%
+label-empty = %index%: %icon%
 label-empty-foreground = #444
 label-empty-padding = 2
 
@@ -119,7 +118,7 @@ label-empty-padding = 2
 type = internal/cpu
 interval = 0.5
 format = <label> <ramp-coreload>
-label = CPU
+label = cpu
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 3
@@ -156,9 +155,9 @@ type = internal/memory
 interval = 0.5
 format = <label> <bar-used>
 
-label = RAM
+label = mem
 
-bar-used-width = 10
+bar-used-width = 20
 bar-used-gradient = true
 bar-used-foreground-0 = #449f3d
 bar-used-foreground-1 = #2f8419
@@ -195,7 +194,7 @@ animation-packetloss-framerate = 500
 
 [module/wired-network]
 type = internal/network
-interface = eth0
+interface = enp0s31f6
 interval = 3.0
 
 label-connected =    %{T3}%local_ip%%{T-}
