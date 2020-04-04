@@ -10,7 +10,7 @@ margin-top = 0
 margin-bottom = 0
 
 [settings]
-dpi = 113
+dpi = 96
 ; screenchange-reload = true
 
 [bar/bottom]
