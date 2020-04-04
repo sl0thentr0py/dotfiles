@@ -41,7 +41,7 @@ myLayout = desktopLayoutModifiers $ smartBorders $ spacingWithEdge space $ layou
      -- Percent of screen to increment by when resizing panes
      delta = 3/100
      -- spacing between windows
-     space = 1
+     space = 5
 
 
 -- manage windows
