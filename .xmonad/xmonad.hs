@@ -134,7 +134,6 @@ myConfig = desktopConfig {
 } `additionalKeys`
       [ ((mod4Mask, xK_r        ), spawn "rofi -show combi -combi-modi \"run,drun\" -modi combi")
       , ((mod4Mask, xK_p        ), spawn "passmenu")
-      , ((mod4Mask, xK_x        ), spawn "$HOME/.config/monitor-hotplug.sh")
       ] `additionalKeysP` addKeys
 
 main = do

@@ -42,6 +42,5 @@ rofi &
 udiskie &
 dunst &
 pgrep redshift &> /dev/null || redshift &> /dev/null &
-INIT_MODE=1 ~/.config/monitor-hotplug.sh &>> ~/tmp
 ~/.fehbg
 exec xmonad
