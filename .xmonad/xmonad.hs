@@ -49,6 +49,7 @@ myManageHook = composeAll
   [
     className =? "Firefox Developer Edition" --> doShift "2",
     className =? "dota2" --> doShift "8",
+    className =? "vlc" --> doShift "7",
     className =? "Pavucontrol" --> doCenterFloat,
     className =? "Pinentry" --> doCenterFloat,
     isDialog --> doCenterFloat
