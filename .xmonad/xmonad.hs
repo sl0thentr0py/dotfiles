@@ -48,6 +48,7 @@ myLayout = desktopLayoutModifiers $ smartBorders $ spacingWithEdge space $ layou
 myManageHook = composeAll
   [
     className =? "Firefox Developer Edition" --> doShift "2",
+    className =? "dota2" --> doShift "8",
     className =? "Pavucontrol" --> doCenterFloat,
     className =? "Pinentry" --> doCenterFloat,
     isDialog --> doCenterFloat
@@ -136,6 +137,9 @@ myConfig = desktopConfig {
       , ((myModMask, xK_p        ), spawn "passmenu")
       , ((myModMask, xK_x        ), spawn "$HOME/.config/polybar/launch.sh")
       , ((myModMask, xK_z        ), spawn "killall -q polybar")
+      , ((myModMask, xK_F2       ), spawn "pulseaudio-ctl down 10")
+      , ((myModMask, xK_F3       ), spawn "pulseaudio-ctl up 10")
+      , ((myModMask, xK_F4       ), spawn "pulseaudio-ctl mute")
       ] `additionalKeysP` addKeys
 
 main = do
