@@ -24,7 +24,7 @@ myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
 
 myBorderWidth = 1
-myModMask = mod4Mask
+myModMask = mod1Mask
 myNormalBorderColor  = "#262626"
 myFocusedBorderColor = "#363636"
 
@@ -132,8 +132,10 @@ myConfig = desktopConfig {
     startupHook        = myStartupHook,
     logHook            = myLogHook <+> logHook desktopConfig
 } `additionalKeys`
-      [ ((mod4Mask, xK_r        ), spawn "rofi -show combi -combi-modi \"run,drun\" -modi combi")
-      , ((mod4Mask, xK_p        ), spawn "passmenu")
+      [ ((myModMask, xK_r        ), spawn "rofi -show combi -combi-modi \"run,drun\" -modi combi")
+      , ((myModMask, xK_p        ), spawn "passmenu")
+      , ((myModMask, xK_x        ), spawn "$HOME/.config/polybar/launch.sh")
+      , ((myModMask, xK_z        ), spawn "killall -q polybar")
       ] `additionalKeysP` addKeys
 
 main = do
