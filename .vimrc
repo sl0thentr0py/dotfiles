@@ -302,6 +302,7 @@ nnoremap <Leader>o :.Gbrowse<CR>
 
 
 "" fzf
+let g:fzf_preview_window = ''
 noremap <leader>b :Buffers<CR>
 noremap <leader>f :GFiles<CR>
 noremap <leader>gf :GFiles?<CR>
