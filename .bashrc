@@ -17,6 +17,7 @@ alias git=hub
 alias ggs='git status '
 alias gga='git add -p'
 alias ggb='git branch '
+alias ggp='git push '
 alias ggc='git commit'
 alias ggd='git diff'
 alias ggco='git checkout '
