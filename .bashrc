@@ -14,6 +14,13 @@ alias vim=nvim
 alias v=nvim
 alias git=hub
 
+alias ggs='git status '
+alias gga='git add -p'
+alias ggb='git branch '
+alias ggc='git commit'
+alias ggd='git diff'
+alias ggco='git checkout '
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
