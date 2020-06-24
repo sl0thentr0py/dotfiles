@@ -63,7 +63,7 @@ myStartupHook = do
   setWMName "LG3D" -- for java applications
   startupHook desktopConfig
   -- setSupported
-  spawn "picom --xrender-sync --xrender-sync-fence"
+  spawn "picom --xrender-sync-fence"
   spawn "$HOME/.config/polybar/launch.sh"
   spawn "firefox"
   spawn myTerminal
