@@ -26,6 +26,7 @@ alias ggco='git checkout '
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/go/bin"
 export EDITOR=vim
 export ERL_AFLAGS="-kernel shell_history enabled"
 
