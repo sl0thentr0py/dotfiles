@@ -51,8 +51,8 @@ myManageHook = composeAll
     className =? "dota2" --> doShift "8",
     className =? "vlc" --> doShift "7",
     className =? "Pavucontrol" --> doCenterFloat,
-    className =? "Pinentry" --> doCenterFloat,
-    isDialog --> doCenterFloat
+    isDialog --> doCenterFloat,
+    isFullscreen --> doFullFloat
   ]
 
 -- event hook, change for ewmh
