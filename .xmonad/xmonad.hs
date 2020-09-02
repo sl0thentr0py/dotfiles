@@ -51,6 +51,7 @@ myManageHook = composeAll
     className =? "dota2" --> doShift "8",
     className =? "vlc" --> doShift "7",
     className =? "Pavucontrol" --> doCenterFloat,
+    stringProperty "_NET_WM_NAME" =? "Emulator" --> doFloat,
     isDialog --> doCenterFloat,
     isFullscreen --> doFullFloat
   ]
