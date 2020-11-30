@@ -73,6 +73,13 @@ Plug 'junegunn/fzf.vim'
 
 "" Color
 Plug 'ap/vim-css-color'
+
+"" Snippets
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -305,6 +312,7 @@ nnoremap <Leader>o :.Gbrowse<CR>
 
 
 "" fzf
+let g:fzf_layout = { 'down': '40%' }
 let g:fzf_preview_window = ''
 noremap <leader>b :Buffers<CR>
 noremap <leader>f :GFiles<CR>
@@ -315,6 +323,7 @@ noremap <leader>t :Tags<CR>
 noremap <leader>' :Marks<CR>
 nnoremap <leader>] :call fzf#vim#tags("'".expand('<cword>'))<cr><space>
 noremap <leader>a :Ag <C-R><C-W><CR>
+noremap <leader>s :Snippets<CR>
 
 autocmd VimEnter * command! -nargs=* -bang Agr call fzf#vim#ag_raw(<q-args>, <bang>0)
 
@@ -388,6 +397,9 @@ let g:airline_skip_empty_sections = 1
 let g:racer_cmd = "/home/neel/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
+"" ultisnips
+let g:UltiSnipsExpandTrigger = "<leader>s"
+
 "*****************************************************************************
 "" Functions
 "*****************************************************************************
@@ -435,9 +447,6 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
-"" Source vimrc
-map <leader>s :source ~/.vimrc<CR>
-
 "" Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
