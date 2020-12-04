@@ -43,11 +43,12 @@ alias j='fasd_cd -d -1'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# added by travis gem
+[ ! -s /home/neel/.travis/travis.sh ] || source /home/neel/.travis/travis.sh
+source "$HOME/.cargo/env"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/neel/software/google-cloud-sdk/path.bash.inc' ]; then . '/home/neel/software/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/neel/software/google-cloud-sdk/completion.bash.inc' ]; then . '/home/neel/software/google-cloud-sdk/completion.bash.inc'; fi
-
-# added by travis gem
-[ ! -s /home/neel/.travis/travis.sh ] || source /home/neel/.travis/travis.sh
