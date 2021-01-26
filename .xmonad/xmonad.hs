@@ -141,6 +141,7 @@ myConfig = desktopConfig {
       , ((myModMask, xK_F2       ), spawn "pulseaudio-ctl down 10")
       , ((myModMask, xK_F3       ), spawn "pulseaudio-ctl up 10")
       , ((myModMask, xK_F4       ), spawn "pulseaudio-ctl mute")
+      , ((myModMask, xK_Print    ), spawn "flameshot gui")
       ] `additionalKeysP` addKeys
 
 main = do
