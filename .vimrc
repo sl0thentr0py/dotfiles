@@ -53,12 +53,12 @@ Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/indentLine'
 Plug 'vimwiki/vimwiki'
 Plug 'morhetz/gruvbox'
-" Plug 'junegunn/limelight.vim'
-" " {{{
-" let g:limelight_default_coefficient = 0.7
-" let g:limelight_conceal_ctermfg = 238
+Plug 'junegunn/limelight.vim'
+" {{{
+let g:limelight_default_coefficient = 0.7
+let g:limelight_conceal_ctermfg = 238
 " nmap <Leader> l :Limelight!!<CR>
-" " }}}
+" }}}
 Plug 'junegunn/goyo.vim'
 
 Plug 'vim-airline/vim-airline'

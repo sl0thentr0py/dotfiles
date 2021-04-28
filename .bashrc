@@ -52,3 +52,5 @@ if [ -f '/home/neel/software/google-cloud-sdk/path.bash.inc' ]; then . '/home/ne
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/neel/software/google-cloud-sdk/completion.bash.inc' ]; then . '/home/neel/software/google-cloud-sdk/completion.bash.inc'; fi
+
+source "$HOME/.secret_env"
