@@ -87,7 +87,7 @@ Plug 'neovim/nvim-lspconfig'
 "" Custom bundles
 "*****************************************************************************
 " linting
-" Plug 'w0rp/ale'
+Plug 'neomake/neomake'
 
 " c
 "Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
@@ -532,3 +532,9 @@ end
 
 nvim_lsp.pyright.setup { on_attach = on_attach }
 EOF
+
+"*****************************************************************************
+" neomake linting
+"*****************************************************************************
+let g:neomake_python_enabled_makers = ['pylint']
+let g:neomake_virtualtext_current_error=0
