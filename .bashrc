@@ -22,6 +22,8 @@ alias ggc='git commit'
 alias ggd='git diff'
 alias ggco='git checkout '
 
+alias tb='tig blame'
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.rvm/bin"

@@ -47,25 +47,24 @@ Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/CSApprox'
 Plug 'airblade/vim-gitgutter'
-Plug 'mileszs/ack.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/indentLine'
 Plug 'vimwiki/vimwiki'
 Plug 'morhetz/gruvbox'
+
 Plug 'junegunn/limelight.vim'
 " {{{
 let g:limelight_default_coefficient = 0.7
 let g:limelight_conceal_ctermfg = 238
 " nmap <Leader> l :Limelight!!<CR>
 " }}}
+
 Plug 'junegunn/goyo.vim'
 
 Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
-Plug 'majutsushi/tagbar'
 Plug 'chrisbra/csv.vim'
-"Plug 'scrooloose/syntastic'
 
 "" fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -112,12 +111,10 @@ Plug 'tpope/vim-bundler'
 Plug 'danchoi/ri.vim'
 
 "scala
-"Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
 "rust
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 
 "swift
 Plug 'keith/swift.vim'
@@ -133,6 +130,9 @@ Plug 'chr4/nginx.vim'
 
 "R
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+
+"Python
+Plug 'numirias/semshi'
 ""*****************************************************************************
 "*****************************************************************************
 
@@ -276,7 +276,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
-"" no one is really happy until you have this shortcuts
+"" no one is really happy until you have these shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -292,8 +292,6 @@ cnoreabbrev Qall qall
 "*****************************************************************************
 "" Plugins
 "*****************************************************************************
-"" tagbar
-nmap <F8> :TagbarToggle<CR>
 
 "" vim-fugitive
 if exists("*fugitive#statusline")
@@ -334,27 +332,11 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 endif
 
-" syntastic
-"let g:syntastic_always_populate_loc_list=1
-"let g:syntastic_error_symbol='✗'
-"let g:syntastic_warning_symbol='⚠'
-"let g:syntastic_style_error_symbol = '✗'
-"let g:syntastic_style_warning_symbol = '⚠'
-"let g:syntastic_auto_loc_list=1
-"let g:syntastic_aggregate_errors = 1
-
-" Tagbar
-"map <silent> <F4> :TagbarToggle<CR>
-"let g:tagbar_autofocus = 1
-"
-
 " indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
-
-
 
 " vim-airline
 if !exists('g:airline_symbols')
@@ -382,20 +364,6 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
-
-""""ensime
-"let ensime_server_v2=1
-"autocmd FileType scala,java
-"            \ nnoremap <buffer> <silent> <LocalLeader>t :EnType<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>T :EnTypeCheck<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>g :EnDeclaration<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>i :EnInspectType<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>I :EnSuggestImport<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>r :EnRename<CR>
-
-"" racer
-let g:racer_cmd = "/home/neel/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
 
 "" ultisnips
 let g:UltiSnipsExpandTrigger = "<leader>s"
@@ -438,9 +406,6 @@ augroup vimrc-make-cmake
     autocmd FileType make setlocal noexpandtab
     autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
-
-"" tagbar
-" autocmd FileType * nested :call tagbar#autoopen(0)
 
 set autoread
 
@@ -501,7 +466,7 @@ vnoremap K :m '<-2<CR>gv=gv
 "*****************************************************************************
 
 " indent
-autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType cpp,python setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd Filetype scala,java,ruby setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd Filetype html,javascript,javascript.jsx setlocal tabstop=4 shiftwidth=4 expandtab
@@ -528,23 +493,6 @@ autocmd Filetype javascript,javascript.jsx
       \ setlocal includeexpr=LoadMainNodeModule(v:fname)
 
 autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
-
-" ruby
-" if executable('ripper-tags')
-"   let g:tagbar_type_ruby = {
-"       \ 'kinds'      : ['m:modules',
-"                       \ 'c:classes',
-"                       \ 'C:constants',
-"                       \ 'F:singleton methods',
-"                       \ 'f:methods',
-"                       \ 'a:aliases'],
-"       \ 'kind2scope' : { 'c' : 'class',
-"                        \ 'm' : 'class' },
-"       \ 'scope2kind' : { 'class' : 'c' },
-"       \ 'ctagsbin'   : 'ripper-tags',
-"       \ 'ctagsargs'  : ['-f', '-']
-"       \ }
-" endif
 
 set tags^=./.git/tags;
 
