@@ -29,7 +29,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
-export EDITOR=vim
+export EDITOR=nvim
 export ERL_AFLAGS="-kernel shell_history enabled"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
