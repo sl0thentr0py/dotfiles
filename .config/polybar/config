@@ -43,7 +43,7 @@ font-3 = FontAwesome:size=7;2
 font-4 = Termsynu:size=3;1
 
 modules-left = xworkspaces title
-modules-right = cpu memory redshift volume backlight wireless-network wired-network battery date
+modules-right = cpu memory redshift bluetooth volume backlight wireless-network wired-network battery date
 
 [module/title]
 type = internal/xwindow
@@ -54,6 +54,14 @@ type = custom/script
 interval = 5
 
 exec = ~/.config/polybar/redshift.sh
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/bluetooth.sh
+interval = 2
+click-left = exec blueman-manager
+click-right = exec ~/.config/polybar/toggle_bluetooth.sh
+format-padding = 1
 
 [module/backlight]
 type = internal/xbacklight
@@ -171,7 +179,7 @@ bar-used-empty-foreground = #44
 
 [module/wireless-network]
 type = internal/network
-interface = wlan1
+interface = wlan0
 ; interface = wlp2s0
 interval = 3.0
 ; ping-interval = 10
