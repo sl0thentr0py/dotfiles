@@ -2,38 +2,38 @@
 "" Vim-PLug core
 "*****************************************************************************
 if has('vim_starting')
-    set nocompatible               " Be iMproved
+  set nocompatible               " Be iMproved
 endif
 
 
 if has('nvim')
-    let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+  let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
-    if !filereadable(vimplug_exists)
-        echo "Installing Vim-Plug..."
-        echo ""
-        silent !\curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        let g:not_finish_vimplug = "yes"
+  if !filereadable(vimplug_exists)
+    echo "Installing Vim-Plug..."
+    echo ""
+    silent !\curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    let g:not_finish_vimplug = "yes"
 
-        autocmd VimEnter * PlugInstall
-    endif
+    autocmd VimEnter * PlugInstall
+  endif
 
-    " Required:
-    call plug#begin(expand('~/.config/nvim/plugged'))
+  " Required:
+  call plug#begin(expand('~/.config/nvim/plugged'))
 else
-    let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+  let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
-    if !filereadable(vimplug_exists)
-        echo "Installing Vim-Plug..."
-        echo ""
-        silent !\curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        let g:not_finish_vimplug = "yes"
+  if !filereadable(vimplug_exists)
+    echo "Installing Vim-Plug..."
+    echo ""
+    silent !\curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    let g:not_finish_vimplug = "yes"
 
-        autocmd VimEnter * PlugInstall
-    endif
+    autocmd VimEnter * PlugInstall
+  endif
 
-    " Required:
-    call plug#begin(expand('~/.vim/plugged'))
+  " Required:
+  call plug#begin(expand('~/.vim/plugged'))
 endif
 
 
@@ -47,25 +47,24 @@ Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/CSApprox'
 Plug 'airblade/vim-gitgutter'
-Plug 'mileszs/ack.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/indentLine'
 Plug 'vimwiki/vimwiki'
 Plug 'morhetz/gruvbox'
-" Plug 'junegunn/limelight.vim'
-" " {{{
-" let g:limelight_default_coefficient = 0.7
-" let g:limelight_conceal_ctermfg = 238
+
+Plug 'junegunn/limelight.vim'
+" {{{
+let g:limelight_default_coefficient = 0.7
+let g:limelight_conceal_ctermfg = 238
 " nmap <Leader> l :Limelight!!<CR>
-" " }}}
+" }}}
+
 Plug 'junegunn/goyo.vim'
 
 Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'chrisbra/csv.vim'
-"Plug 'scrooloose/syntastic'
 
 "" fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -73,11 +72,22 @@ Plug 'junegunn/fzf.vim'
 
 "" Color
 Plug 'ap/vim-css-color'
+
+"" Snippets
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
+
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
 " linting
-" Plug 'w0rp/ale'
+Plug 'neomake/neomake'
 
 " c
 "Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
@@ -105,12 +115,10 @@ Plug 'tpope/vim-bundler'
 Plug 'danchoi/ri.vim'
 
 "scala
-"Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
 "rust
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 
 "swift
 Plug 'keith/swift.vim'
@@ -126,12 +134,15 @@ Plug 'chr4/nginx.vim'
 
 "R
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+
+"Python
+Plug 'numirias/semshi'
 ""*****************************************************************************
 "*****************************************************************************
 
 "" Include user's extra bundle
 if filereadable(expand("~/.vimrc.local.bundles"))
-    source ~/.vimrc.local.bundles
+  source ~/.vimrc.local.bundles
 endif
 
 call plug#end()
@@ -200,7 +211,7 @@ set background=dark
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-    colorscheme gruvbox
+  colorscheme gruvbox
 endif
 
 set mouse=a
@@ -210,21 +221,21 @@ set guioptions=egmrti
 set gfn=Monospace\ 10
 
 if has("gui_running")
-    if has("gui_mac") || has("gui_macvim")
-        set guifont=Menlo:h12
-        set transparency=7
-    endif
+  if has("gui_mac") || has("gui_macvim")
+    set guifont=Menlo:h12
+    set transparency=7
+  endif
 else
-    let g:CSApprox_loaded = 1
+  let g:CSApprox_loaded = 1
 
 
-    if $COLORTERM == 'gnome-terminal'
-        set term=gnome-256color
-    else
-        if $TERM == 'xterm'
-            set term=xterm-256color
-        endif
+  if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+  else
+    if $TERM == 'xterm'
+      set term=xterm-256color
     endif
+  endif
 
 endif
 
@@ -256,7 +267,7 @@ nnoremap N Nzzzv
 " Disable visualbell
 set noerrorbells visualbell t_vb=
 if has('autocmd')
-    autocmd GUIEnter * set visualbell t_vb=
+  autocmd GUIEnter * set visualbell t_vb=
 endif
 
 " wildmode
@@ -269,7 +280,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
-"" no one is really happy until you have this shortcuts
+"" no one is really happy until you have these shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -285,12 +296,10 @@ cnoreabbrev Qall qall
 "*****************************************************************************
 "" Plugins
 "*****************************************************************************
-"" tagbar
-nmap <F8> :TagbarToggle<CR>
 
 "" vim-fugitive
 if exists("*fugitive#statusline")
-    set statusline+=%{fugitive#statusline()}
+  set statusline+=%{fugitive#statusline()}
 endif
 
 noremap <Leader>ga :Gwrite<CR>
@@ -305,6 +314,8 @@ nnoremap <Leader>o :.Gbrowse<CR>
 
 
 "" fzf
+let g:fzf_layout = { 'down': '40%' }
+let g:fzf_preview_window = ''
 noremap <leader>b :Buffers<CR>
 noremap <leader>f :GFiles<CR>
 noremap <leader>gf :GFiles?<CR>
@@ -314,29 +325,16 @@ noremap <leader>t :Tags<CR>
 noremap <leader>' :Marks<CR>
 nnoremap <leader>] :call fzf#vim#tags("'".expand('<cword>'))<cr><space>
 noremap <leader>a :Ag <C-R><C-W><CR>
+noremap <leader>s :Snippets<CR>
 
 autocmd VimEnter * command! -nargs=* -bang Agr call fzf#vim#ag_raw(<q-args>, <bang>0)
 
 
 " The Silver Searcher
 if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-    set grepprg=ag\ --nogroup\ --nocolor
+  let g:ackprg = 'ag --vimgrep'
+  set grepprg=ag\ --nogroup\ --nocolor
 endif
-
-" syntastic
-"let g:syntastic_always_populate_loc_list=1
-"let g:syntastic_error_symbol='✗'
-"let g:syntastic_warning_symbol='⚠'
-"let g:syntastic_style_error_symbol = '✗'
-"let g:syntastic_style_warning_symbol = '⚠'
-"let g:syntastic_auto_loc_list=1
-"let g:syntastic_aggregate_errors = 1
-
-" Tagbar
-"map <silent> <F4> :TagbarToggle<CR>
-"let g:tagbar_autofocus = 1
-"
 
 " indentLine
 let g:indentLine_enabled = 1
@@ -344,58 +342,22 @@ let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
+"" vim-airline
+let g:airline_theme = 'base16_gruvbox_dark_hard'
+let g:airline_powerline_fonts = 1
 
-
-" vim-airline
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_left_sep          = '▶'
-let g:airline_left_alt_sep      = '»'
-let g:airline_right_sep         = '◀'
-let g:airline_right_alt_sep     = '«'
-let g:airline#extensions#branch#prefix     = '➔'
-let g:airline#extensions#readonly#symbol   = '⊘'
-let g:airline#extensions#linecolumn#prefix = '¶'
-let g:airline#extensions#paste#symbol      = 'ρ'
-let g:airline_symbols.linenr    = '␊'
-let g:airline_symbols.branch    = '➔'
-let g:airline_symbols.paste     = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
-
-"let g:airline_theme = 'powerlineish'
-"let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
-
-""""ensime
-"let ensime_server_v2=1
-"autocmd FileType scala,java
-"            \ nnoremap <buffer> <silent> <LocalLeader>t :EnType<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>T :EnTypeCheck<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>g :EnDeclaration<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>i :EnInspectType<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>I :EnSuggestImport<CR> |
-"            \ nnoremap <buffer> <silent> <LocalLeader>r :EnRename<CR>
-
-"" racer
-let g:racer_cmd = "/home/neel/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
+"" ultisnips
+let g:UltiSnipsExpandTrigger = "<leader>s"
 
 "*****************************************************************************
 "" Functions
 "*****************************************************************************
 if !exists('*s:setupWrapping')
-    function s:setupWrapping()
-        set wrap
-        set wm=2
-        set textwidth=79
-    endfunction
+  function s:setupWrapping()
+    set wrap
+    set wm=2
+    set textwidth=79
+  endfunction
 endif
 
 "*****************************************************************************
@@ -403,40 +365,34 @@ endif
 "*****************************************************************************
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
-    autocmd!
-    autocmd BufEnter * :syntax sync maxlines=200
+  autocmd!
+  autocmd BufEnter * :syntax sync maxlines=200
 augroup END
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
-    autocmd!
-    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
 "" txt
 augroup vimrc-wrapping
-    autocmd!
-    autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
+  autocmd!
+  autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
 augroup END
 
 "" make/cmake
 augroup vimrc-make-cmake
-    autocmd!
-    autocmd FileType make setlocal noexpandtab
-    autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
+  autocmd!
+  autocmd FileType make setlocal noexpandtab
+  autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
-
-"" tagbar
-" autocmd FileType * nested :call tagbar#autoopen(0)
 
 set autoread
 
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
-"" Source vimrc
-map <leader>s :source ~/.vimrc<CR>
-
 "" Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
@@ -457,7 +413,7 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "" Copy/Paste/Cut
 if has('unnamedplus')
-    set clipboard=unnamed,unnamedplus
+  set clipboard=unnamed,unnamedplus
 endif
 
 noremap YY "+y<CR>
@@ -487,11 +443,11 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 "*****************************************************************************
-"" Lanugage configs
+"" Language configs
 "*****************************************************************************
 
 " indent
-autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType cpp,python setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd Filetype scala,java,ruby setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd Filetype html,javascript,javascript.jsx setlocal tabstop=4 shiftwidth=4 expandtab
@@ -500,15 +456,15 @@ autocmd Filetype html,javascript,javascript.jsx setlocal tabstop=4 shiftwidth=4 
 let g:javascript_enable_domhtmlcss = 1
 
 function! LoadMainNodeModule(fname)
-    let nodeModules = "./node_modules/"
-    let packageJsonPath = nodeModules . a:fname . "/package.json"
+  let nodeModules = "./node_modules/"
+  let packageJsonPath = nodeModules . a:fname . "/package.json"
 
-    if filereadable(packageJsonPath)
-        let json = json_decode(join(readfile(packageJsonPath)))
-        return nodeModules . a:fname . "/" . get(json, 'main', 'index.js')
-    else
-        return nodeModules . a:fname
-    endif
+  if filereadable(packageJsonPath)
+    let json = json_decode(join(readfile(packageJsonPath)))
+    return nodeModules . a:fname . "/" . get(json, 'main', 'index.js')
+  else
+    return nodeModules . a:fname
+  endif
 endfunction
 
 autocmd Filetype javascript,javascript.jsx
@@ -519,33 +475,43 @@ autocmd Filetype javascript,javascript.jsx
 
 autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
 
-" ruby
-" if executable('ripper-tags')
-"   let g:tagbar_type_ruby = {
-"       \ 'kinds'      : ['m:modules',
-"                       \ 'c:classes',
-"                       \ 'C:constants',
-"                       \ 'F:singleton methods',
-"                       \ 'f:methods',
-"                       \ 'a:aliases'],
-"       \ 'kind2scope' : { 'c' : 'class',
-"                        \ 'm' : 'class' },
-"       \ 'scope2kind' : { 'class' : 'c' },
-"       \ 'ctagsbin'   : 'ripper-tags',
-"       \ 'ctagsargs'  : ['-f', '-']
-"       \ }
-" endif
-
 set tags^=./.git/tags;
 
 " rvm_ctags ruby
 autocmd FileType ruby
-			\ let &tags .= "," . $MY_RUBY_HOME . "/lib/tags" |
-			\ let &path .= "," . $MY_RUBY_HOME . "/lib"
+      \ let &tags .= "," . $MY_RUBY_HOME . "/lib/tags" |
+      \ let &path .= "," . $MY_RUBY_HOME . "/lib"
 
 " elixir deps tags
 autocmd FileType elixir
-			\ let &tags .= ",deps/tags"
+      \ let &tags .= ",deps/tags"
 
 "*****************************************************************************
+" LSP
 "*****************************************************************************
+lua << EOF
+local nvim_lsp = require('lspconfig')
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+end
+
+nvim_lsp.pyright.setup { on_attach = on_attach }
+EOF
+
+"*****************************************************************************
+" neomake linting
+"*****************************************************************************
+let g:neomake_python_enabled_makers = ['pylint']
+let g:neomake_virtualtext_current_error=0
