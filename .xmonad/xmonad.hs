@@ -7,6 +7,7 @@ import XMonad.Config.Desktop
 import XMonad.Layout
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
+import XMonad.Layout.Grid
 
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.DynamicLog
@@ -31,7 +32,7 @@ myFocusedBorderColor = "#363636"
 -- Layout definitions & modifiers
 myLayout = desktopLayoutModifiers $ smartBorders $ spacingWithEdge space $ layouts
   where
-     layouts = tiled ||| Full
+     layouts = tiled ||| Full ||| Grid
      -- default
      tiled = Tall nmaster delta ratio
      -- The default number of windows in the master pane
