@@ -1,3 +1,5 @@
 [user]
 	email = neelshah.sa@gmail.com
 	name = Neel Shah
+[core]
+	excludesfile = /Users/neel/.gitignore_global
