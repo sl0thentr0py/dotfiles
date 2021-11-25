@@ -57,3 +57,5 @@ if [ -f '/home/neel/software/google-cloud-sdk/completion.bash.inc' ]; then . '/h
 
 source "$HOME/.secret_env"
 eval "$(pyenv init -)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
