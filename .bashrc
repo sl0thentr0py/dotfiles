@@ -56,3 +56,4 @@ if [ -f '/home/neel/software/google-cloud-sdk/path.bash.inc' ]; then . '/home/ne
 if [ -f '/home/neel/software/google-cloud-sdk/completion.bash.inc' ]; then . '/home/neel/software/google-cloud-sdk/completion.bash.inc'; fi
 
 source "$HOME/.secret_env"
+eval "$(pyenv init -)"
