@@ -268,6 +268,8 @@ vnoremap K :m '<-2<CR>gv=gv
 autocmd FileType cpp,python,html,javascript,javascript.jsx setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c,scala,java,ruby setlocal tabstop=2 shiftwidth=2 expandtab
 
+let g:python3_host_prog = expand('~/.venvs/neovim/bin/python3')
+
 "*****************************************************************************
 " lua
 "*****************************************************************************
