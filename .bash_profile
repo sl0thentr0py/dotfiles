@@ -16,7 +16,3 @@ source "$HOME/.cargo/env"
 eval "$(pyenv init --path)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
-# virtualenvwrapper
-export WORKON_HOME=~/.venvs
-source $HOME/.pyenv/versions/3.9.7/bin/virtualenvwrapper.sh

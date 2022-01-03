@@ -11,17 +11,6 @@ PS1='[\u@\h \W]\$ '
 source /usr/share/doc/pkgfile/command-not-found.bash
 alias vim=nvim
 alias v=nvim
-alias git=hub
-
-alias ggs='git status '
-alias gga='git add -p'
-alias ggb='git branch '
-alias ggp='git push '
-alias ggc='git commit'
-alias ggd='git diff'
-alias ggco='git checkout '
-
-alias tb='tig blame'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -58,3 +47,4 @@ source "$HOME/.secret_env"
 eval "$(pyenv init -)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+eval "$(pyenv virtualenv-init -)"
