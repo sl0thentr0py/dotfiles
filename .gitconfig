@@ -1,15 +1,17 @@
 [user]
-	email = neelshah.sa@gmail.com
-	name = Neel Shah
+  email = neelshah.sa@gmail.com
+  name = Neel Shah
 [core]
-	excludesfile = /home/neel/.gitignore_global
-[core]
-    pager = delta
+  excludesfile = /home/neel/.gitignore_global
+  pager = delta
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [delta]
-    navigate = true  # use n and N to move between diff sections
+  navigate = true  # use n and N to move between diff sections
+  line-numbers = true
+  true-color = always
+  hunk-header-style = file line-number
 [merge]
-    conflictstyle = diff3
+  conflictstyle = diff3
 [diff]
-    colorMoved = default
+  colorMoved = default
