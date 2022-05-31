@@ -59,6 +59,7 @@ Plug 'honza/vim-snippets'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
+Plug 'gfanto/fzf-lsp.nvim'
 
 " linting
 Plug 'neomake/neomake'
@@ -201,7 +202,7 @@ noremap <leader>f :GFiles<CR>
 noremap <leader>gf :GFiles?<CR>
 noremap <leader><S-f> :Files<CR>
 noremap <leader>' :Marks<CR>
-noremap <leader>a :Ag <C-R><C-W><CR>
+noremap <leader>a :Rg <C-R><C-W><CR>
 noremap <leader>s :Snippets<CR>
 
 autocmd VimEnter * command! -nargs=* -bang Agr call fzf#vim#ag_raw(<q-args>, <bang>0)
@@ -211,6 +212,9 @@ let g:indentLine_enabled = 1
 let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
+
+" vimwiki
+nnoremap <leader>wt :VimwikiToggleListItem<CR>
 
 "*****************************************************************************
 "" Mappings
@@ -278,3 +282,6 @@ lua require('line')
 "*****************************************************************************
 let g:neomake_python_enabled_makers = ['pylint']
 let g:neomake_virtualtext_current_error=0
+
+"" python virtualenv mess
+let g:python3_host_prog = '/Users/neel/.pyenv/versions/neovim/bin/python'
