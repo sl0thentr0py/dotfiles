@@ -36,7 +36,7 @@ Plug 'junegunn/limelight.vim'
 " {{{
 let g:limelight_default_coefficient = 0.7
 let g:limelight_conceal_ctermfg = 238
-" nmap <Leader> l :Limelight!!<CR>
+nmap <Leader>l :Limelight!!<CR>
 " }}}
 
 Plug 'junegunn/goyo.vim'
@@ -191,7 +191,8 @@ noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Git blame<CR>
 noremap <Leader>gd :Gvdiff<CR>
-nnoremap <Leader>o :.GBrowse<CR>
+noremap <Leader>gh :.GBrowse<CR>
+vnoremap <Leader>gh :.GBrowse<CR>
 
 
 "" fzf " TODO neel telescope
