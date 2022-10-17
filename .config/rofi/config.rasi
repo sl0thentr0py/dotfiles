@@ -1,6 +1,6 @@
 configuration {
   modi: "window,run,ssh,drun";
-	font: "Inconsolata 10";
+	font: "Inconsolata Nerd Font 10";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/

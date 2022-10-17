@@ -22,7 +22,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-characterize'
-Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate' "TODO neel treesitter
@@ -31,6 +30,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'morhetz/gruvbox'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'tpope/vim-vinegar'
 
 Plug 'junegunn/limelight.vim'
 " {{{
@@ -41,7 +41,7 @@ let g:limelight_conceal_ctermfg = 238
 
 Plug 'junegunn/goyo.vim'
 
-Plug 'chrisbra/csv.vim'
+" Plug 'chrisbra/csv.vim'
 
 "" fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
