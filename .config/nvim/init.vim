@@ -22,6 +22,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate' "TODO neel treesitter
@@ -30,18 +31,17 @@ Plug 'vimwiki/vimwiki'
 Plug 'morhetz/gruvbox'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'tpope/vim-vinegar'
 
 Plug 'junegunn/limelight.vim'
 " {{{
 let g:limelight_default_coefficient = 0.7
 let g:limelight_conceal_ctermfg = 238
-" nmap <Leader> l :Limelight!!<CR>
+nmap <Leader>l :Limelight!!<CR>
 " }}}
 
 Plug 'junegunn/goyo.vim'
 
-" Plug 'chrisbra/csv.vim'
+Plug 'chrisbra/csv.vim'
 
 "" fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -59,7 +59,7 @@ Plug 'honza/vim-snippets'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'alexaandru/nvim-lspupdate'
+" Plug 'gfanto/fzf-lsp.nvim'
 
 " linting
 Plug 'neomake/neomake'
@@ -141,8 +141,6 @@ set noswapfile
 
 set omnifunc=syntaxcomplete#Complete
 
-let g:ruby_host_prog = 'rvm default do neovim-ruby-host'
-
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
@@ -191,27 +189,29 @@ noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Git blame<CR>
 noremap <Leader>gd :Gvdiff<CR>
-nnoremap <Leader>o :.GBrowse<CR>
+noremap <Leader>gh :.GBrowse<CR>
+vnoremap <Leader>gh :.GBrowse<CR>
 
 
 "" fzf " TODO neel telescope
 let g:fzf_layout = { 'down': '40%' }
-let g:fzf_preview_window = '' 
 noremap <leader>b :Buffers<CR>
 noremap <leader>f :GFiles<CR>
 noremap <leader>gf :GFiles?<CR>
 noremap <leader><S-f> :Files<CR>
 noremap <leader>' :Marks<CR>
-noremap <leader>a :Ag <C-R><C-W><CR>
+noremap <leader>a :Rg <C-R><C-W><CR>
 noremap <leader>s :Snippets<CR>
 
 autocmd VimEnter * command! -nargs=* -bang Agr call fzf#vim#ag_raw(<q-args>, <bang>0)
 
 " indentLine
 let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
+
+" vimwiki
+nnoremap <leader>wt :VimwikiToggleListItem<CR>
 
 "*****************************************************************************
 "" Mappings
@@ -268,8 +268,6 @@ vnoremap K :m '<-2<CR>gv=gv
 autocmd FileType cpp,python,html,javascript,javascript.jsx setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType c,scala,java,ruby setlocal tabstop=2 shiftwidth=2 expandtab
 
-let g:python3_host_prog = expand('~/.pyenv/versions/neovim-venv/bin/python')
-
 "*****************************************************************************
 " lua
 "*****************************************************************************
@@ -281,3 +279,6 @@ lua require('line')
 "*****************************************************************************
 let g:neomake_python_enabled_makers = ['pylint']
 let g:neomake_virtualtext_current_error=0
+
+"" python virtualenv mess
+let g:python3_host_prog = '/home/neel/.pyenv/versions/neovim/bin/python'

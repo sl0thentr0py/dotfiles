@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */home/neel/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/neel/.fzf/bin"
+  export PATH="${PATH:+${PATH}:}/home/neel/.fzf/bin"
 fi
 
 # Auto-completion

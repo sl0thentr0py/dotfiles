@@ -12,9 +12,7 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 alias vim=nvim
 alias v=nvim
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export EDITOR=nvim
@@ -48,3 +46,6 @@ eval "$(pyenv init -)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 eval "$(pyenv virtualenv-init -)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
