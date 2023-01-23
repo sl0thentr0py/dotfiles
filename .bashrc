@@ -12,6 +12,8 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 alias vim=nvim
 alias v=nvim
 
+alias q='rlwrap ~/q/l32/q'
+
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
