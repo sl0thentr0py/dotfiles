@@ -48,7 +48,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "" Color
-Plug 'ap/vim-css-color'
+" Plug 'ap/vim-css-color'
 
 "" Snippets
 " Track the engine.
@@ -111,6 +111,11 @@ Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
 "Python
 Plug 'numirias/semshi' "treesitter
+
+"q/kdb+
+Plug 'katusk/vim-qkdb-syntax'
+
+Plug 'tidalcycles/vim-tidal'
 ""*****************************************************************************
 "*****************************************************************************
 
@@ -207,12 +212,6 @@ noremap <leader>a :Rg <C-R><C-W><CR>
 noremap <leader>s :Snippets<CR>
 
 autocmd VimEnter * command! -nargs=* -bang Agr call fzf#vim#ag_raw(<q-args>, <bang>0)
-
-" indentLine
-let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 0
-let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
 
 " vimwiki
 nnoremap <leader>wt :VimwikiToggleListItem<CR>

@@ -13,18 +13,35 @@ local on_attach = function(client, bufnr)
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', 'ge', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[e', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']e', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  buf_set_keymap('n', '[e', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']e', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 end
 
 nvim_lsp.pyright.setup { on_attach = on_attach }
 nvim_lsp.tsserver.setup{ on_attach = on_attach }
 nvim_lsp.solargraph.setup{ on_attach = on_attach }
-nvim_lsp.rust_analyzer.setup{ on_attach = on_attach }
+nvim_lsp.intelephense.setup{ on_attach = on_attach }
+nvim_lsp.gopls.setup{ on_attach = on_attach }
+-- nvim_lsp.clangd.setup{ on_attach = on_attach }
+nvim_lsp.elixirls.setup{
+  cmd = { "/usr/local/bin/elixir-ls" };
+  on_attach = on_attach;
+}
+nvim_lsp.rust_analyzer.setup{
+  on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+        cargo = {
+            allFeatures = true,
+            },
+        },
+    },
+}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
