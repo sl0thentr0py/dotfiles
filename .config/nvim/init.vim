@@ -48,7 +48,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "" Color
-Plug 'ap/vim-css-color'
+" Plug 'ap/vim-css-color'
 
 "" Snippets
 " Track the engine.
@@ -59,7 +59,7 @@ Plug 'honza/vim-snippets'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
-" Plug 'gfanto/fzf-lsp.nvim'
+Plug 'gfanto/fzf-lsp.nvim'
 
 " linting
 Plug 'neomake/neomake'
@@ -111,6 +111,11 @@ Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
 "Python
 Plug 'numirias/semshi' "treesitter
+
+"q/kdb+
+Plug 'katusk/vim-qkdb-syntax'
+
+Plug 'tidalcycles/vim-tidal'
 ""*****************************************************************************
 "*****************************************************************************
 
@@ -140,6 +145,7 @@ set nobackup
 set noswapfile
 
 set omnifunc=syntaxcomplete#Complete
+
 
 "*****************************************************************************
 "" Visual Settings
@@ -195,6 +201,7 @@ vnoremap <Leader>gh :.GBrowse<CR>
 
 "" fzf " TODO neel telescope
 let g:fzf_layout = { 'down': '40%' }
+let g:fzf_preview_window = '' 
 noremap <leader>b :Buffers<CR>
 noremap <leader>f :GFiles<CR>
 noremap <leader>gf :GFiles?<CR>
@@ -204,11 +211,6 @@ noremap <leader>a :Rg <C-R><C-W><CR>
 noremap <leader>s :Snippets<CR>
 
 autocmd VimEnter * command! -nargs=* -bang Agr call fzf#vim#ag_raw(<q-args>, <bang>0)
-
-" indentLine
-let g:indentLine_enabled = 1
-let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
 
 " vimwiki
 nnoremap <leader>wt :VimwikiToggleListItem<CR>
@@ -282,3 +284,4 @@ let g:neomake_virtualtext_current_error=0
 
 "" python virtualenv mess
 let g:python3_host_prog = '/home/neel/.pyenv/versions/neovim/bin/python'
+" let g:ruby_host_prog = 'rvm default do neovim-ruby-host'
