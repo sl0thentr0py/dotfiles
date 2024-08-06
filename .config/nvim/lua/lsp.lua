@@ -39,7 +39,10 @@ nvim_lsp.rust_analyzer.setup{
         cargo = {
             allFeatures = true,
             },
-        },
+        checkOnSave = {
+          extraArgs={"--target-dir", "/tmp/rust-analyzer-check"}
+        }
+      }
     },
 }
 

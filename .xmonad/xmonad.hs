@@ -70,9 +70,9 @@ myStartupHook = do
   spawn myTerminal
 
 -- Additional keybindings for media keys
-addKeys = [ ("<XF86AudioLowerVolume>"        ,spawn "pulseaudio-ctl down 10")
-          , ("<XF86AudioRaiseVolume>"        ,spawn "pulseaudio-ctl up 10"  )
-          , ("<XF86AudioMute>"               ,spawn "pulseaudio-ctl mute"   )
+addKeys = [ ("<XF86AudioLowerVolume>"        ,spawn "pamixer -d 10")
+          , ("<XF86AudioRaiseVolume>"        ,spawn "pamixer -i 10"  )
+          , ("<XF86AudioMute>"               ,spawn "paxmixer -t"   )
           , ("<XF86MonBrightnessDown>"       ,spawn "light -U 5"            )
           , ("<XF86MonBrightnessUp>"         ,spawn "light -A 5"            )
           -- , ("<XF86AudioPlay>"               ,spawn "play-pause-mpd.sh"     )
@@ -139,9 +139,9 @@ myConfig = desktopConfig {
       , ((myModMask, xK_p        ), spawn "passmenu")
       , ((myModMask, xK_x        ), spawn "$HOME/.config/polybar/launch.sh")
       , ((myModMask, xK_z        ), spawn "killall -q polybar")
-      , ((myModMask, xK_F2       ), spawn "pulseaudio-ctl down 10")
-      , ((myModMask, xK_F3       ), spawn "pulseaudio-ctl up 10")
-      , ((myModMask, xK_F4       ), spawn "pulseaudio-ctl mute")
+      , ((myModMask, xK_F2       ), spawn "pamixer -d 10")
+      , ((myModMask, xK_F3       ), spawn "pamixer -i 10")
+      , ((myModMask, xK_F4       ), spawn "pamixer -t")
       , ((myModMask, xK_Print    ), spawn "flameshot gui")
       ] `additionalKeysP` addKeys
 
