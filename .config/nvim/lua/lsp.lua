@@ -29,7 +29,7 @@ nvim_lsp.intelephense.setup{ on_attach = on_attach }
 nvim_lsp.gopls.setup{ on_attach = on_attach }
 -- nvim_lsp.clangd.setup{ on_attach = on_attach }
 nvim_lsp.elixirls.setup{
-  cmd = { "/usr/local/bin/elixir-ls" };
+  cmd = { "/usr/bin/elixir-ls" };
   on_attach = on_attach;
 }
 nvim_lsp.rust_analyzer.setup{

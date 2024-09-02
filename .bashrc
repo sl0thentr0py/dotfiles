@@ -37,12 +37,6 @@ alias j='fasd_cd -d -1'
 [ ! -s /home/neel/.travis/travis.sh ] || source /home/neel/.travis/travis.sh
 source "$HOME/.cargo/env"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/neel/software/google-cloud-sdk/path.bash.inc' ]; then . '/home/neel/software/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/neel/software/google-cloud-sdk/completion.bash.inc' ]; then . '/home/neel/software/google-cloud-sdk/completion.bash.inc'; fi
-
 source "$HOME/.secret_env"
 eval "$(pyenv init -)"
 export VOLTA_HOME="$HOME/.volta"
@@ -56,3 +50,13 @@ export PATH="/home/neel/.local/share/sentry-devenv/bin:$PATH"
 
 eval "$(direnv hook bash)"
 
+# sentry-testing
+export SENTRY_KUBE_KUBECTL_VERSION=1.24.3
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+export SENTRY_KUBE_CUSTOMER=sass
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/neel/google-cloud-sdk/path.bash.inc' ]; then . '/home/neel/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/neel/google-cloud-sdk/completion.bash.inc' ]; then . '/home/neel/google-cloud-sdk/completion.bash.inc'; fi
