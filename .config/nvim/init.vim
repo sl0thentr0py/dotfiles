@@ -27,7 +27,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate' "TODO neel treesitter
 Plug 'Yggdroot/indentLine'
+
+let g:vimwiki_ext2syntax = {}
 Plug 'vimwiki/vimwiki'
+
 Plug 'morhetz/gruvbox'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'

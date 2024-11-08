@@ -27,6 +27,7 @@ nvim_lsp.tsserver.setup{ on_attach = on_attach }
 nvim_lsp.solargraph.setup{ on_attach = on_attach }
 nvim_lsp.intelephense.setup{ on_attach = on_attach }
 nvim_lsp.gopls.setup{ on_attach = on_attach }
+nvim_lsp.jdtls.setup{ on_attach = on_attach }
 -- nvim_lsp.clangd.setup{ on_attach = on_attach }
 nvim_lsp.elixirls.setup{
   cmd = { "/usr/local/bin/elixir-ls" };
