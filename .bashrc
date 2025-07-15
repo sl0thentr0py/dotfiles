@@ -47,7 +47,6 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/home/neel/.local/share/sentry-devenv/bin:$PATH"
 
-
 eval "$(direnv hook bash)"
 
 # sentry-testing
@@ -60,3 +59,6 @@ if [ -f '/home/neel/google-cloud-sdk/path.bash.inc' ]; then . '/home/neel/google
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/neel/google-cloud-sdk/completion.bash.inc' ]; then . '/home/neel/google-cloud-sdk/completion.bash.inc'; fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
