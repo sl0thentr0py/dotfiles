@@ -7,9 +7,9 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
+# if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+#   exec startx
+# fi
 source "$HOME/.cargo/env"
 eval "$(pyenv init --path)"
 export VOLTA_HOME="$HOME/.volta"

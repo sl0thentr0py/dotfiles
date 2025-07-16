@@ -37,7 +37,6 @@ alias j='fasd_cd -d -1'
 [ ! -s /home/neel/.travis/travis.sh ] || source /home/neel/.travis/travis.sh
 source "$HOME/.cargo/env"
 
-source "$HOME/.secret_env"
 eval "$(pyenv init -)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
