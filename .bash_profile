@@ -7,6 +7,10 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
+if uwsm check may-start; then
+    exec uwsm start hyprland-uwsm.desktop
+fi
+
 # if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 #   exec startx
 # fi
