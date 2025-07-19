@@ -1,5 +1,5 @@
 configuration {
-  modi: "window,run,ssh,drun";
+  modi: "window,run,ssh,drun,combi";
 	font: "Inconsolata Nerd Font 10";
 /*	location: 0;*/
 /*	yoffset: 0;*/
@@ -145,4 +145,4 @@ configuration {
   }
 }
 
-@theme "glue_pro_blue"
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
