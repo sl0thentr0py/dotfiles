@@ -6,7 +6,8 @@ discord-ptb-update-skip-git
 exif
 extramaus
 flashplugin
-fonts-meta-extended-lt
+gruvbox-dark-gtk
+gruvbox-dark-icons-gtk
 hardinfo-git
 hyprsysteminfo
 icaclient
@@ -26,10 +27,6 @@ sc
 simplescreenrecorder
 slack-desktop-wayland
 subtitleedit
-termsyn-font
-ttf-dejavu-sans-mono-powerline-git
-ttf-font-awesome-4
-ttf-material-icons-git
 urxvt-resize-font-git
 urxvt-vtwheel
 yay-bin

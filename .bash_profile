@@ -11,10 +11,6 @@ if uwsm check may-start; then
     exec uwsm start hyprland-uwsm.desktop
 fi
 
-# if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-#   exec startx
-# fi
-source "$HOME/.cargo/env"
 eval "$(pyenv init --path)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"

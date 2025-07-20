@@ -39,6 +39,7 @@ filezilla
 firefox-developer-edition
 flameshot
 flex
+font-manager
 foot
 fortune-mod
 gdb
@@ -50,6 +51,7 @@ gnuplot
 graphviz
 groff
 grub
+gtk-engine-murrine
 gtk2
 guvcview
 gvfs
@@ -126,7 +128,6 @@ qemu-full
 qt5ct
 qt6ct
 r
-redshift
 reflector
 ripgrep
 rlwrap
@@ -158,7 +159,6 @@ tk
 traceroute
 tree
 ttf-dejavu-nerd
-ttf-inconsolata-nerd
 udiskie
 unzip
 urxvt-perls
@@ -167,6 +167,7 @@ valgrind
 vi
 virt-manager
 vlc
+vlc-plugins-all
 w3m
 waybar
 wget
@@ -179,16 +180,7 @@ xarchiver
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-user-dirs
-xmonad
-xmonad-contrib
-xorg-fonts-alias-misc
-xorg-server
-xorg-xdpyinfo
-xorg-xev
-xorg-xinit
-xorg-xkill
 xorg-xrandr
-xorg-xsetroot
 yubikey-manager
 zathura
 zathura-cb

@@ -14,7 +14,6 @@ alias v=nvim
 
 alias q='rlwrap ~/q/l32/q'
 
-export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export EDITOR=nvim
@@ -32,10 +31,6 @@ eval "$(fasd --init auto)"
 alias j='fasd_cd -d -1'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# added by travis gem
-[ ! -s /home/neel/.travis/travis.sh ] || source /home/neel/.travis/travis.sh
-source "$HOME/.cargo/env"
 
 eval "$(pyenv init -)"
 export VOLTA_HOME="$HOME/.volta"
