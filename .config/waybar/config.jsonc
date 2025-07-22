@@ -10,11 +10,11 @@
     "cpu",
     "memory",
     "temperature",
-    //"hyprland/language",
+    "hyprland/language",
     "network",
     "pulseaudio",
-    "clock"
-    //     "custom/power"
+    "clock",
+    "custom/power"
   ],
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -66,28 +66,33 @@
     "critical-threshold": 80,
     "format": ""
   },
+  "hyprland/language": {
+    "format-en": "en",
+    "format-de": "de",
+    "on-click": "hyprctl switchxkblayout current next"
+  },
   "pulseaudio": {
-        "format": "{icon}",
-        "format-bluetooth": "{icon}",
-        "format-bluetooth-muted": "󰸈 {icon}",
-        "format-muted": "󰸈",
-        "format-icons": {
-          "headphone": "",
-          "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol",
-        "tooltip-format": "{volume}% - {desc}"
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": "󰸈 {icon}",
+    "format-muted": "󰸈",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "tooltip-format": "{volume}% - {desc}"
+  },
+  "custom/power": {
+    "format" : "⏻ ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power.xml", // Menu file in resources folder
+    "menu-actions": {
+      "shutdown": "systemctl poweroff",
+      "reboot": "systemctl reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate"
+    }
   }
-    // "custom/power": {
-    //     "format" : "⏻ ",
-    // "tooltip": false,
-    // "menu": "on-click",
-    // "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    // "menu-actions": {
-      // "shutdown": "shutdown",
-      // "reboot": "reboot",
-      // "suspend": "systemctl suspend",
-      // "hibernate": "systemctl hibernate"
-    // }
-    // }
 }

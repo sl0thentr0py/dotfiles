@@ -37,7 +37,8 @@ window#waybar{
   color: #cc241d;
 }
 
-#workspaces button:hover, #clock:hover, #network:hover, #cpu:hover, #memory:hover, #temperature:hover, #pulseaudio:hover {
+#workspaces button:hover, #clock:hover, #network:hover, #cpu:hover, #language:hover,
+#memory:hover, #temperature:hover, #pulseaudio:hover, #custom-power:hover {
   transition: all .5s ease;
   box-shadow: inherit;
   text-shadow: inherit;
@@ -45,7 +46,7 @@ window#waybar{
   border-color: #d65d0e;
 }
 
-#pulseaudio, #network, #cpu, #memory, #temperature {
+#pulseaudio, #network, #cpu, #memory, #temperature, #language {
   margin-right: 5px;
   transition: all .5s ease;
 }
