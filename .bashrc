@@ -30,7 +30,7 @@ export MM_DEBUG=1
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d -1'
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(fzf --bash)"
 
 eval "$(pyenv init -)"
 export VOLTA_HOME="$HOME/.volta"
