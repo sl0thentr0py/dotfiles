@@ -30,5 +30,3 @@ opt.wildmode = "longest:full,full"
 
 -- signcolumn for upto 4 signs
 opt.signcolumn = "auto:4"
-
-vim.g.python3_host_prog = '/Users/neel/.asdf/installs/python/3.12.7/bin/python'

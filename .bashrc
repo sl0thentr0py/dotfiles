@@ -39,6 +39,8 @@ export PATH="/home/neel/.local/share/sentry-devenv/bin:$PATH"
 
 eval "$(direnv hook bash)"
 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 # sentry-testing
 export SENTRY_KUBE_KUBECTL_VERSION=1.24.3
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
