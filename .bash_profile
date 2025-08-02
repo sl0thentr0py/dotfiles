@@ -1,17 +1,12 @@
 #
 # ~/.bash_profile
 #
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 if uwsm check may-start; then
     exec uwsm start hyprland-uwsm.desktop
 fi
 
-eval "$(pyenv init --path)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
