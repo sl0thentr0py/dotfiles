@@ -1,3 +1,5 @@
+[core]
+  attributesFile = ~/.gitattributes
 [user]
   email = neelshah.sa@gmail.com
   name = Neel Shah
@@ -15,5 +17,8 @@
   conflictstyle = diff3
 [diff]
   colorMoved = default
+[diff "gz"]
+  textconv = zcat
+  binary = true
 [difftool "diffpdf"]
   cmd = diff-pdf --view \"$LOCAL\" \"$REMOTE\"
