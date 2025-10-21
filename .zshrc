@@ -26,3 +26,5 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 eval "$(direnv hook zsh)"
 eval "$(zoxide init --cmd j zsh)"
 source <(fzf --zsh)
+
+. ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.zsh
