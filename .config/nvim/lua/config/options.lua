@@ -30,3 +30,8 @@ opt.wildmode = "longest:full,full"
 
 -- signcolumn for upto 4 signs
 opt.signcolumn = "auto:4"
+
+-- folding
+opt.foldmethod = 'expr'
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldlevel = 99
