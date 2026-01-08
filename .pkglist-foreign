@@ -1,3 +1,4 @@
+asdf-vm
 bluetuith-bin
 brother-dcpl2530dw
 brscan4
@@ -6,18 +7,20 @@ discord-ptb-update-skip-git
 exif
 extramaus
 flashplugin
+gnu-netcat
 gruvbox-dark-gtk
 gruvbox-dark-icons-gtk
+gtk-engine-murrine
+gtk2
 hardinfo-git
 hyprsysteminfo
 icaclient
 mkvalidator
 neovim-nightly-bin
+plex-media-server
 pngcheck
 polybar-git
 polychromatic
-protontricks
-pyenv-git
 recutils
 rofi-dmenu
 rose-pine-cursor
@@ -26,8 +29,6 @@ rust-analyzer-nightly-bin
 sc
 simplescreenrecorder
 slack-desktop-wayland
-subtitleedit
 urxvt-resize-font-git
 urxvt-vtwheel
 yay-bin
-zoom
