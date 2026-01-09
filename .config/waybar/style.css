@@ -37,8 +37,20 @@ window#waybar{
   color: #cc241d;
 }
 
+#custom-hyprwhspr.recording {
+  color: #cc241d;
+}
+
+#custom-hyprwhspr.stopped {
+  color: inherit;
+}
+
+#custom-hyprwhspr.error {
+  color: #d97706;
+}
+
 #workspaces button:hover, #clock:hover, #network:hover, #cpu:hover, #language:hover,
-#memory:hover, #temperature:hover, #pulseaudio:hover, #custom-power:hover {
+#memory:hover, #temperature:hover, #pulseaudio:hover, #custom-power:hover, #custom-hyprwhspr:hover {
   transition: all .5s ease;
   box-shadow: inherit;
   text-shadow: inherit;
@@ -46,7 +58,7 @@ window#waybar{
   border-color: #d65d0e;
 }
 
-#pulseaudio, #network, #cpu, #memory, #temperature, #language {
+#pulseaudio, #network, #cpu, #memory, #temperature, #language, #custom-hyprwhspr {
   margin-right: 5px;
   transition: all .5s ease;
 }
