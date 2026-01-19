@@ -14,6 +14,8 @@ alias v=nvim
 
 alias q='rlwrap ~/q/l32/q'
 
+alias ssh='TERM=linux ssh'
+
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export EDITOR=nvim
