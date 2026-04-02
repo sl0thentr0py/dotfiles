@@ -18,6 +18,7 @@ alias ssh='TERM=linux ssh'
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="/home/neel/.cache/.bun/bin:$PATH"
 export EDITOR=nvim
 export ERL_AFLAGS="-kernel shell_history enabled"
 export _JAVA_AWT_WM_NONREPARENTING=1
