@@ -35,5 +35,5 @@ vim.g.python3_host_prog = '/Users/neel/.asdf/installs/python/3.12.7/bin/python'
 
 -- folding
 opt.foldmethod = 'expr'
-opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 opt.foldlevel = 99
