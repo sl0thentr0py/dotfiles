@@ -57,3 +57,18 @@ if [ -f '/home/neel/google-cloud-sdk/completion.bash.inc' ]; then . '/home/neel/
 . "$HOME/.cargo/env"
 
 source "$HOME/.keys"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/neel/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/neel/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
