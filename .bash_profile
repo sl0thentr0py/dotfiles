@@ -21,3 +21,5 @@ case ":$PATH:" in
 esac
 
 # <<< juliaup initialize <<<
+
+. "$HOME/.local/share/../bin/env"

@@ -322,7 +322,7 @@ hl.window_rule({
 
 hl.window_rule({
     name = "windowrule-4",
-    match = { class = "^(Slack)$" },
+    match = { class = "^(slack)$" },
     workspace = "3 silent",
 })
 
