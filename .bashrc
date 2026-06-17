@@ -35,14 +35,9 @@ alias j='fasd_cd -d -1'
 
 eval "$(fzf --bash)"
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 export PATH="/home/neel/.local/share/sentry-devenv/bin:$PATH"
 
 eval "$(direnv hook bash)"
-
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # sentry-testing
 export SENTRY_KUBE_KUBECTL_VERSION=1.24.3
@@ -74,3 +69,5 @@ esac
 # <<< juliaup initialize <<<
 
 . "$HOME/.local/share/../bin/env"
+
+eval "$(mise activate bash)"
