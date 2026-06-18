@@ -1,7 +1,6 @@
-// -*- mode: jsonc -*-
 {
-  "layer": "bottom", // Waybar at top layer
-  "position": "bottom", // Waybar position (top|bottom|left|right)
+  "layer": "bottom",
+  "position": "bottom",
   "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces"
@@ -20,17 +19,22 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "8": "",
-      "9": "",
-      "10": "",
-      "default": ""
+      "1": "\uf489",
+      "2": "\ue658",
+      "3": "\uf198",
+      "4": "\uf1ff",
+      "8": "\uf201",
+      "9": "\uf1b7",
+      "10": "\uf1b6",
+      "default": "\uf111"
     },
     "persistent-workspaces": {
-      "*": [ 1,2,3,4 ]
+      "*": [
+        1,
+        2,
+        3,
+        4
+      ]
     }
   },
   "clock": {
@@ -49,25 +53,25 @@
     }
   },
   "network": {
-    "format-wifi": "󱚻",
-    "format-ethernet":"",
-    "format-disconnected": "",
+    "format-wifi": "\udb85\udebb",
+    "format-ethernet": "\uef09",
+    "format-disconnected": "\ueb01",
     "tooltip-format-disconnected": "Disconnected",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} 🖧 ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) \uf1eb",
+    "tooltip-format-ethernet": "{ifname} \ud83d\udda7 ",
     "on-click": "foot bash -c \"networkctl; bash\""
   },
   "cpu": {
-    "format": ""
+    "format": "\uec19"
   },
   "memory": {
-    "format": "",
+    "format": "\uefc5",
     "tooltip-format": "{percentage}% - {used:0.1f}GiB used"
   },
   "temperature": {
     "critical-threshold": 80,
     "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
-    "format": ""
+    "format": "\uef2b"
   },
   "hyprland/language": {
     "format-en": "en",
@@ -76,21 +80,25 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "format-bluetooth": "{icon}",
-    "format-bluetooth-muted": "󰸈 {icon}",
-    "format-muted": "󰸈",
+    "format-bluetooth": "{icon}\uf294",
+    "format-bluetooth-muted": "\udb83\ude08 {icon}\uf294",
+    "format-muted": "\udb83\ude08",
     "format-icons": {
-      "headphone": "",
-      "default": ["", "", ""]
+      "headphone": "\uf025",
+      "default": [
+        "\uf026",
+        "\uf027",
+        "\uf028"
+      ]
     },
     "on-click": "pavucontrol",
     "tooltip-format": "{volume}% - {desc}"
   },
   "custom/power": {
-    "format" : "⏻ ",
+    "format": "\u23fb ",
     "tooltip": false,
     "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power.xml", // Menu file in resources folder
+    "menu-file": "$HOME/.config/waybar/power.xml",
     "menu-actions": {
       "shutdown": "systemctl poweroff",
       "reboot": "systemctl reboot",
@@ -107,5 +115,8 @@
     "on-click": "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh record",
     "on-click-right": "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh restart",
     "tooltip": true
-  }
+  },
+  "include": [
+    "/home/neel/.config/waybar/hyprwhspr-module.jsonc"
+  ]
 }

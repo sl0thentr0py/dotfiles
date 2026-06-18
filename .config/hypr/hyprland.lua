@@ -212,7 +212,7 @@ hl.config({
 
         follow_mouse = 1,
 
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = -0.3, -- -1.0 - 1.0, 0 means no modification.
     },
 })
 
@@ -334,7 +334,10 @@ hl.window_rule({
 
 hl.window_rule({
     name = "windowrule-6",
-    match = { title = ".*Brokers.*" },
+    match = {
+        title = ".*Brokers.*",
+        class = "^(IBKR|IBGateway)$",
+    },
     workspace = "8 silent",
 })
 
