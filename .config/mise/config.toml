@@ -1,0 +1,13 @@
+[tools]
+python = "latest"
+node = "latest"
+go = "latest"
+erlang = "latest"
+elixir = "latest"
+lua = "latest"
+rebar = "latest"
+action-validator = "latest"
+ruby = "latest"
+
+[settings.ruby]
+compile = false
