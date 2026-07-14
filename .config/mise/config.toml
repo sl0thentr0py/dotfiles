@@ -1,13 +1,14 @@
 [tools]
-python = "latest"
-node = "latest"
+# postinstall keeps the neovim host packages present across every `latest` upgrade
+python = { version = "latest", postinstall = "pip install --upgrade pynvim" }
+node = { version = "latest", postinstall = "npm install -g neovim" }
 go = "latest"
 erlang = "latest"
 elixir = "latest"
 lua = "latest"
 rebar = "latest"
 action-validator = "latest"
-ruby = "latest"
+ruby = { version = "latest", postinstall = "gem install neovim" }
 
 [settings.ruby]
 compile = false
