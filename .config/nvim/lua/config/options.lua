@@ -31,7 +31,13 @@ opt.wildmode = "longest:full,full"
 -- signcolumn for upto 4 signs
 opt.signcolumn = "auto:4"
 
+-- provider hosts pinned to mise globals; packages kept fresh via mise postinstall hooks
+vim.g.python3_host_prog = vim.env.HOME .. '/.local/share/mise/installs/python/latest/bin/python'
+vim.g.node_host_prog = vim.env.HOME .. '/.local/share/mise/installs/node/latest/bin/neovim-node-host'
+vim.g.ruby_host_prog = vim.env.HOME .. '/.local/share/mise/installs/ruby/latest/bin/neovim-ruby-host'
+vim.g.loaded_perl_provider = 0
+
 -- folding
 opt.foldmethod = 'expr'
-opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 opt.foldlevel = 99
