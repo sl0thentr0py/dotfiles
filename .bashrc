@@ -35,6 +35,8 @@ export MM_DEBUG=1
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d -1'
 
+alias dev='docker compose -f docker-compose-dev.yml'
+
 eval "$(fzf --bash)"
 
 export PATH="/home/neel/.local/share/sentry-devenv/bin:$PATH"
