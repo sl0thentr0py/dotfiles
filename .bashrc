@@ -11,7 +11,6 @@ PS1='[\u@\h \W]\$ '
 source /usr/share/doc/pkgfile/command-not-found.bash
 alias vim=nvim
 alias v=nvim
-alias c=claude
 alias p=pi
 
 alias q='rlwrap ~/q/l32/q'
