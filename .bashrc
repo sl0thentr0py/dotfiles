@@ -52,7 +52,9 @@ if [ -f '/home/neel/google-cloud-sdk/path.bash.inc' ]; then . '/home/neel/google
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/neel/google-cloud-sdk/completion.bash.inc' ]; then . '/home/neel/google-cloud-sdk/completion.bash.inc'; fi
-. "$HOME/.cargo/env"
+export RUSTUP_HOME="$HOME/m2/.rustup"
+export CARGO_HOME="$HOME/m2/.cargo"
+. "$CARGO_HOME/env"
 
 source "$HOME/.keys"
 
